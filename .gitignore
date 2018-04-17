@@ -53,3 +53,11 @@ google-services.json
 freeline.py
 freeline/
 freeline_project_description.json
+
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/.idea/vcs.xml
+.DS_Store
+/build
+/captures
