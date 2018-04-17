@@ -1,0 +1,44 @@
+ext.deps = [:]
+
+def versions = [:]
+versions.support = "26.1.0"
+versions.kotlin = "1.1.51"
+versions.constraint_layout = "1.0.2"
+versions.runner = "1.0.1"
+versions.espresso_core = "3.0.1"
+versions.junit = "4.12"
+versions.gradle = "3.0.0"
+
+def deps = [:]
+
+def support = [:]
+support.app_compat = "com.android.support:appcompat-v7:$versions.support"
+support.recyclerview = "com.android.support:recyclerview-v7:$versions.support"
+deps.support = support
+
+def kotlin = [:]
+kotlin.kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin"
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+
+deps.kotlin = kotlin
+deps.junit = "junit:junit:$versions.junit"
+deps.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
+deps.runner = "com.android.support.test:runner:$versions.runner"
+deps.espresso_core = "com.android.support.test.espresso:espresso-core:$versions.espresso_core"
+deps.gradle_plugin = "com.android.tools.build:gradle:$versions.gradle"
+
+ext.deps = deps
+
+def build_versions = [:]
+build_versions.target_sdk = 26
+build_versions.min_sdk = 16
+build_versions.build_tools = "26.0.2"
+ext.build_versions = build_versions
+
+def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
+ext.addRepos = this.&addRepos
+
