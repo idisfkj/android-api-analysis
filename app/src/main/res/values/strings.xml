@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidApiAnalysis</string>
+    <string name="show_image">show image</string>
+    <string name="relative_article">相关文章</string>
 </resources>

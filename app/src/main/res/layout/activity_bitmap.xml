@@ -1,6 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".bitmap.BitmapActivity">
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/show_image"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/image_view_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@+id/image_view"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="show image information" />
+
+    <ImageView
+        android:id="@+id/sub_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view" />
+
+    <TextView
+        android:id="@+id/sub_image_view_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@+id/sub_image_view"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view"
+        tools:text="show image information" />
+
+    <Button
+        android:id="@+id/relative_article"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        android:text="@string/relative_article"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/create_bitmap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="createBitmap"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/relative_article"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/create_scaled_bitmap" />
+
+    <Button
+        android:id="@+id/create_scaled_bitmap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="create scaled bitmap"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/relative_article"
+        app:layout_constraintLeft_toRightOf="@+id/create_bitmap"
+        app:layout_constraintRight_toLeftOf="@+id/decode_file" />
+
+    <Button
+        android:id="@+id/decode_file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="decode file"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/relative_article"
+        app:layout_constraintLeft_toRightOf="@+id/create_scaled_bitmap"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
