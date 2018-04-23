@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".bitmap.BitmapActivity" />
+        <activity android:name=".webview.WebViewArticleActivity" />
     </application>
 
 </manifest>

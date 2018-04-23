@@ -11,6 +11,7 @@ import com.idisfkj.androidapianalysis.MainModel
 import com.idisfkj.androidapianalysis.R
 import com.idisfkj.androidapianalysis.utils.ActivityUtils
 import com.idisfkj.androidapianalysis.utils.LogUtils
+import com.idisfkj.androidapianalysis.webview.WebViewArticleActivity
 import kotlinx.android.synthetic.main.activity_bitmap.*
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -115,7 +116,7 @@ class BitmapActivity : AppCompatActivity(), View.OnClickListener {
                 decodeFile()
             }
             R.id.relative_article -> {
-
+                WebViewArticleActivity.navigationPage(BitmapActivity@ this, "Bitmap的图片压缩汇总", "https://idisfkj.github.io/2018/03/21/Bitmap%E7%9A%84%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E6%B1%87%E6%80%BB/")
             }
         }
     }
