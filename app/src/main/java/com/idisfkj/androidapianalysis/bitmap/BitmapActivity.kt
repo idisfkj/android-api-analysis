@@ -24,6 +24,10 @@ import java.io.FileOutputStream
 class BitmapActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var scaleBitmap: Bitmap
+    private var bitmapBitmap: Bitmap? = null
+    private var createScaledBitmap: Bitmap? = null
+    private var decodeFileBitmap: Bitmap? = null
+    private var decodeFileScaleBitmap: Bitmap? = null
     private val mRootPath = Environment.getExternalStorageDirectory().absolutePath + "/androidApiAnalysis/"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,33 +79,39 @@ class BitmapActivity : AppCompatActivity(), View.OnClickListener {
     @SuppressLint("SetTextI18n")
     private fun createBitmap() {
         //bitmap
-        val bitmapBitmap = Bitmap.createBitmap(scaleBitmap, 150, 0, 100, 100)
+        if (bitmapBitmap == null) {
+            bitmapBitmap = Bitmap.createBitmap(scaleBitmap, 150, 0, 100, 100)
+        }
         image_view?.setImageBitmap(scaleBitmap)
         image_view_text.text = "width: " + scaleBitmap.width + " height: " + scaleBitmap.height
         sub_image_view.setImageBitmap(bitmapBitmap)
-        sub_image_view_text.text = "startX: 150 startY: 0\n" + "width: " + bitmapBitmap.width + " height: " + bitmapBitmap.height
+        sub_image_view_text.text = "startX: 150 startY: 0\n" + "width: " + bitmapBitmap?.width + " height: " + bitmapBitmap?.height
     }
 
     @SuppressLint("SetTextI18n")
     private fun createScaledBitmap() {
         //createScaledBitmap
-        val createScaledBitmap = Bitmap.createScaledBitmap(scaleBitmap, 500, 300, false)
+        if (createScaledBitmap == null) {
+            createScaledBitmap = Bitmap.createScaledBitmap(scaleBitmap, 500, 300, false)
+        }
         image_view?.setImageBitmap(scaleBitmap)
         image_view_text.text = "width: " + scaleBitmap.width + " height: " + scaleBitmap.height
         sub_image_view.setImageBitmap(createScaledBitmap)
-        sub_image_view_text.text = "width: " + createScaledBitmap.width + " height: " + createScaledBitmap.height
+        sub_image_view_text.text = "width: " + createScaledBitmap?.width + " height: " + createScaledBitmap?.height
     }
 
     @SuppressLint("SetTextI18n")
     private fun decodeFile() {
-        val decodeFileOptions = BitmapFactory.Options()
-        val decodeFileBitmap = BitmapFactory.decodeFile(mRootPath + "bitmap", decodeFileOptions)
-        decodeFileOptions.inSampleSize = 2
-        val decodeFileScaleBitmap = BitmapFactory.decodeFile(mRootPath + "bitmap", decodeFileOptions)
+        if (decodeFileBitmap == null || decodeFileScaleBitmap == null) {
+            val decodeFileOptions = BitmapFactory.Options()
+            decodeFileBitmap = BitmapFactory.decodeFile(mRootPath + "bitmap", decodeFileOptions)
+            decodeFileOptions.inSampleSize = 2
+            decodeFileScaleBitmap = BitmapFactory.decodeFile(mRootPath + "bitmap", decodeFileOptions)
+        }
         image_view?.setImageBitmap(decodeFileBitmap)
-        image_view_text.text = "width: " + decodeFileBitmap.width + " height: " + decodeFileBitmap.height
+        image_view_text.text = "width: " + decodeFileBitmap?.width + " height: " + decodeFileBitmap?.height
         sub_image_view.setImageBitmap(decodeFileScaleBitmap)
-        sub_image_view_text.text = "width: " + decodeFileScaleBitmap.width + " height: " + decodeFileScaleBitmap.height
+        sub_image_view_text.text = "width: " + decodeFileScaleBitmap?.width + " height: " + decodeFileScaleBitmap?.height
     }
 
     override fun onClick(v: View?) {
@@ -119,6 +129,15 @@ class BitmapActivity : AppCompatActivity(), View.OnClickListener {
                 WebViewArticleActivity.navigationPage(BitmapActivity@ this, "Bitmap的图片压缩汇总", "https://idisfkj.github.io/2018/03/21/Bitmap%E7%9A%84%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E6%B1%87%E6%80%BB/")
             }
         }
+    }
+
+    override fun onDestroy() {
+        scaleBitmap.recycle()
+        bitmapBitmap?.recycle()
+        createScaledBitmap?.recycle()
+        decodeFileBitmap?.recycle()
+        decodeFileScaleBitmap?.recycle()
+        super.onDestroy()
     }
 
 }
