@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".bitmap.BitmapActivity" />
         <activity android:name=".webview.WebViewArticleActivity" />
+        <activity android:name=".constraintlayout.ConstraintLayoutActivity" />
     </application>
 
 </manifest>

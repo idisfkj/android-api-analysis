@@ -17,9 +17,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupUI() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         val adapter = MainRecyclerAdapter()
-        adapter.addAll(mutableListOf(
-                ActivityUtils.createMainModel(ActivityUtils.BITMAP_TYPE)
-        ))
+        adapter.addAll(ActivityUtils.getMainModels())
         recyclerView.adapter = adapter
     }
 }
