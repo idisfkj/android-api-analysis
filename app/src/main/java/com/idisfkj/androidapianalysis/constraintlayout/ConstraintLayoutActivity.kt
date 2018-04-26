@@ -40,6 +40,7 @@ class ConstraintLayoutActivity : AppCompatActivity(), View.OnClickListener {
     private fun getLayoutFromId(id: Int?): Int = when (id) {
         R.id.normal -> R.layout.activity_constraint_layout_normal
         R.id.margin -> R.layout.activity_constraint_layout_margin
+        R.id.circle -> R.layout.activity_constraint_layout_circle
         else -> throw IllegalArgumentException("not supported the id: $id")
     }
 
