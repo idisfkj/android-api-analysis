@@ -29,6 +29,10 @@ class ConstraintLayoutActivity : AppCompatActivity(), View.OnClickListener {
     private fun setupListener() {
         normal.setOnClickListener(this)
         margin.setOnClickListener(this)
+        circle.setOnClickListener(this)
+        chain.setOnClickListener(this)
+        guideLine.setOnClickListener(this)
+        barrierAndGroup.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -43,6 +47,7 @@ class ConstraintLayoutActivity : AppCompatActivity(), View.OnClickListener {
         R.id.circle -> R.layout.activity_constraint_layout_circle
         R.id.chain -> R.layout.activity_constraint_layout_chain
         R.id.guideLine -> R.layout.activity_constraint_layout_guide_line
+        R.id.barrierAndGroup -> R.layout.activity_constraint_layout_barrier_group
         else -> throw IllegalArgumentException("not supported the id: $id")
     }
 
