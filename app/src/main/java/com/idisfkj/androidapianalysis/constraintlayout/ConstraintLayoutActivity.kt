@@ -41,6 +41,8 @@ class ConstraintLayoutActivity : AppCompatActivity(), View.OnClickListener {
         R.id.normal -> R.layout.activity_constraint_layout_normal
         R.id.margin -> R.layout.activity_constraint_layout_margin
         R.id.circle -> R.layout.activity_constraint_layout_circle
+        R.id.chain -> R.layout.activity_constraint_layout_chain
+        R.id.guideLine -> R.layout.activity_constraint_layout_guide_line
         else -> throw IllegalArgumentException("not supported the id: $id")
     }
 
