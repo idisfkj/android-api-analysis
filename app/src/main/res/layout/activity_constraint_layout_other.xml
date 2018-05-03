@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--当为wrap_content对其进行强制约束-->
+    <!--app:layout_constrainedWidth=”true|false”-->
+    <!--app:layout_constrainedHeight=”true|false”-->
+    <!--android:minWidth-->
+    <!--android:minHeight-->
+    <!--android:maxWidth-->
+    <!--android:maxHeight-->
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
+        android:text="tv1"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
+        android:text="tv2 我的宽度为wrap_content，所以我需要设置 app:layout_constrainedWidth=true，否则我与tv1的约束将失效，从而覆盖tv1"
+        android:textColor="@android:color/white"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintLeft_toRightOf="@+id/tv1"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!--当为MATCH_CONSTRAINT 可以通过以下设置来约束宽高-->
+    <!--layout_constraintWidth_min and layout_constraintHeight_min-->
+    <!--layout_constraintWidth_max and layout_constraintHeight_max-->
+    <!--layout_constraintWidth_percent and layout_constraintHeight_percent-->
+    <!--android:minWidth-->
+    <!--android:minHeight-->
+    <!--android:maxWidth-->
+    <!--android:maxHeight-->
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
+        android:text="tv3"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/tv1"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <!--ratio-->
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
+        android:text="tv4"
+        android:textColor="@android:color/white"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
+        android:text="tv5"
+        android:textColor="@android:color/white"
+        app:layout_constraintDimensionRatio="H,3:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+</android.support.constraint.ConstraintLayout>
