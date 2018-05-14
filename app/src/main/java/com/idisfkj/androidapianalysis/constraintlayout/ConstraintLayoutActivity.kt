@@ -7,6 +7,7 @@ import android.view.View
 import com.idisfkj.androidapianalysis.MainModel
 import com.idisfkj.androidapianalysis.R
 import com.idisfkj.androidapianalysis.utils.ActivityUtils
+import com.idisfkj.androidapianalysis.webview.WebViewArticleActivity
 import kotlinx.android.synthetic.main.activity_constraint_layout.*
 
 /**
@@ -34,6 +35,9 @@ class ConstraintLayoutActivity : AppCompatActivity(), View.OnClickListener {
         guideLine.setOnClickListener(this)
         barrierAndGroup.setOnClickListener(this)
         other.setOnClickListener(this)
+        relative_article.setOnClickListener {
+            WebViewArticleActivity.navigationPage(this, "ConstraintLayout使用汇总", "https://idisfkj.github.io/2018/05/03/ConstraintLayout%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/")
+        }
     }
 
     override fun onClick(v: View?) {

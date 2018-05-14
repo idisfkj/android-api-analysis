@@ -5,10 +5,6 @@
     android:layout_height="match_parent">
 
     <!--barrier-->
-    <android.support.constraint.Barrier
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
     <TextView
         android:id="@+id/tv1"
         android:layout_width="150dp"
@@ -43,7 +39,7 @@
         android:layout_marginLeft="5dp"
         android:background="@color/colorPrimary"
         android:padding="5dp"
-        android:text="位于tv1与tv2的右侧，哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩"
+        android:text="@string/barrier_tv3"
         android:textColor="@android:color/white"
         app:layout_constraintLeft_toRightOf="@+id/barrier"
         app:layout_constraintRight_toRightOf="parent" />
