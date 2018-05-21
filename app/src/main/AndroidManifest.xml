@@ -23,7 +23,9 @@
         <activity android:name=".bitmap.BitmapActivity" />
         <activity android:name=".webview.WebViewArticleActivity" />
         <activity android:name=".constraintlayout.ConstraintLayoutActivity" />
-        <activity android:name=".constraintlayout.ConstraintLyaoutItemActivity"/>
+        <activity android:name=".constraintlayout.ConstraintLayoutItemActivity" />
+        <activity android:name=".paint.PaintActivity" />
+        <activity android:name=".paint.PaintCodeAnalysisActivity" />
     </application>
 
 </manifest>

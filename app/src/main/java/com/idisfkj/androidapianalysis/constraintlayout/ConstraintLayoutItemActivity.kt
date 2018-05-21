@@ -8,7 +8,7 @@ import com.idisfkj.androidapianalysis.utils.ActivityUtils
  * Created by idisfkj on 2018/4/25.
  * Email : idisfkj@gmail.com.
  */
-class ConstraintLyaoutItemActivity : AppCompatActivity() {
+class ConstraintLayoutItemActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

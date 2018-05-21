@@ -41,7 +41,7 @@ class ConstraintLayoutActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        val intent = Intent(this, ConstraintLyaoutItemActivity::class.java)
+        val intent = Intent(this, ConstraintLayoutItemActivity::class.java)
         intent.putExtra(ActivityUtils.EXTRA_DATA, getLayoutFromId(v?.id))
         startActivity(intent)
     }
