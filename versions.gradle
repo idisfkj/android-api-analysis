@@ -8,6 +8,8 @@ versions.runner = "1.0.1"
 versions.espresso_core = "3.0.1"
 versions.junit = "4.12"
 versions.gradle = "3.0.0"
+versions.lifecycle = "1.1.1"
+versions.room = "1.1.0"
 
 def deps = [:]
 
@@ -21,6 +23,17 @@ kotlin.kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin
 kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
 
 deps.kotlin = kotlin
+
+def lifecycle = [:]
+lifecycle.extensions = "android.arch.lifecycle:extensions:$versions.lifecycle"
+lifecycle.compiler = "android.arch.lifecycle:compiler:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+def room = [:]
+room.runtime = "android.arch.persistence.room:runtime:$versions.room"
+room.compiler = "android.arch.persistence.room:compiler:$versions.room"
+deps.room = room
+
 deps.junit = "junit:junit:$versions.junit"
 deps.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
 deps.runner = "com.android.support.test:runner:$versions.runner"
@@ -40,5 +53,6 @@ def addRepos(RepositoryHandler handler) {
     handler.jcenter()
     handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 }
+
 ext.addRepos = this.&addRepos
 

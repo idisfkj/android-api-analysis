@@ -25,9 +25,19 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation deps.kotlin.kotlin_stdlib
+    // support
     implementation deps.support.app_compat
+    implementation deps.support.recyclerview
+    //constraint-layout
     implementation deps.constraint_layout
+    //kotlin
+    implementation deps.kotlin.kotlin_stdlib
+    //architecture component
+    implementation deps.lifecycle.extensions
+    annotationProcessor deps.lifecycle.compiler
+    implementation deps.room.runtime
+    annotationProcessor deps.room.compiler
+
     testImplementation deps.junit
     androidTestImplementation deps.runner
     androidTestImplementation deps.espresso_core
