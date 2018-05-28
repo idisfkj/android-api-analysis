@@ -1,9 +1,10 @@
-package com.idisfkj.androidapianalysis
+package com.idisfkj.androidapianalysis.viewmodel
 
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.MutableLiveData
 import android.os.Handler
+import com.idisfkj.androidapianalysis.ContactsModel
 
 /**
  * Created by idisfkj on 2018/5/25.
