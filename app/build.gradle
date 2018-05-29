@@ -34,9 +34,9 @@ dependencies {
     implementation deps.kotlin.kotlin_stdlib
     //architecture component
     implementation deps.lifecycle.extensions
-    annotationProcessor deps.lifecycle.compiler
+    kapt deps.lifecycle.compiler
     implementation deps.room.runtime
-    annotationProcessor deps.room.compiler
+    kapt deps.room.compiler
 
     testImplementation deps.junit
     androidTestImplementation deps.runner

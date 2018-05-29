@@ -4,17 +4,18 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.idisfkj.androidapianalysis.viewmodel.ContactsViewModel
 
 /**
  * Created by idisfkj on 2018/5/25.
  * Email : idisfkj@gmail.com.
  */
-class ContactsAdapter(private val context: Context) : RecyclerView.Adapter<ContactsViewHolder>() {
+class ContactsAdapter(private val context: Context, private val viewModel: ContactsViewModel) : RecyclerView.Adapter<ContactsViewHolder>() {
 
     private val mList: MutableList<ContactsModel> by lazy { mutableListOf<ContactsModel>() }
 
     override fun onBindViewHolder(holder: ContactsViewHolder?, position: Int) {
-        holder?.bind(mList[position])
+        holder?.bind(mList[position], viewModel)
     }
 
     override fun getItemCount(): Int = mList.size
@@ -24,6 +25,11 @@ class ContactsAdapter(private val context: Context) : RecyclerView.Adapter<Conta
 
     fun addAll(items: List<ContactsModel>) {
         mList.addAll(items)
+        notifyDataSetChanged()
+    }
+
+    fun clear() {
+        mList.clear()
         notifyDataSetChanged()
     }
 

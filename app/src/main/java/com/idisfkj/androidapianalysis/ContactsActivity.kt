@@ -21,17 +21,18 @@ class ContactsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_contacts_layout)
         setupViewModel()
         setupRecyclerView()
+        mViewModel.getContacts()
 //        lifecycle.addObserver(MyLifeCycleObserver(lifecycle))
-    }
-
-    override fun onStart() {
-        super.onStart()
-        mViewModel.start()
     }
 
     private fun setupRecyclerView() {
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = ContactsAdapter(this)
+        recyclerView.adapter = ContactsAdapter(this, mViewModel)
+        swipeRefresh.isRefreshing = false
+        swipeRefresh.setOnRefreshListener {
+            swipeRefresh.isRefreshing = true
+            mViewModel.getContacts()
+        }
     }
 
     private fun setupViewModel() {
@@ -51,6 +52,8 @@ class ContactsActivity : AppCompatActivity() {
                 Observer {
                     it?.let {
                         //                        Log.d("idisfkj", "update")
+                        swipeRefresh.isRefreshing = false
+                        (recyclerView.adapter as ContactsAdapter).clear()
                         (recyclerView.adapter as ContactsAdapter).addAll(it)
                     }
                 })
@@ -58,6 +61,7 @@ class ContactsActivity : AppCompatActivity() {
                 Observer { title = it })
         mViewModel.message.observe(this,
                 Observer { Toast.makeText(this, it, Toast.LENGTH_SHORT).show() })
+        mViewModel.itemEvent.observe(this, Observer {  })
     }
 
 }
