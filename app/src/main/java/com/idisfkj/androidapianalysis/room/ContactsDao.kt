@@ -1,5 +1,6 @@
 package com.idisfkj.androidapianalysis.room
 
+import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.OnConflictStrategy
@@ -15,6 +16,9 @@ interface ContactsDao {
 
     @Query("SELECT * FROM contacts")
     fun getAllContacts(): List<ContactsModel>
+
+    @Query("SELECT * FROM contacts WHERE contacts_id = :id")
+    fun getContactsById(id: Int): LiveData<ContactsModel>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertContacts(contactsModel: ContactsModel)

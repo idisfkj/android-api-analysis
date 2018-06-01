@@ -2,6 +2,7 @@ package com.idisfkj.androidapianalysis.viewmodel
 
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
+import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.os.Handler
 import com.idisfkj.androidapianalysis.ContactsModel
@@ -14,10 +15,10 @@ import com.idisfkj.androidapianalysis.room.ContactsDataBase
  * Email : idisfkj@gmail.com.
  */
 class ContactsViewModel(application: Application, private val defTitle: String = "Contacts") : AndroidViewModel(application) {
-    val contactsList: MutableLiveData<List<ContactsModel>> by lazy { MutableLiveData<List<ContactsModel>>() }
     val message: MutableLiveData<String> by lazy { MutableLiveData<String>() }
     val title: MutableLiveData<String> by lazy { MutableLiveData<String>() }
     val itemEvent: MutableLiveData<Int> by lazy { MutableLiveData<Int>() }
+    val contactsList: MutableLiveData<List<ContactsModel>> = MutableLiveData()
     private val mExecutors: ExecutorsHelper by lazy { ExecutorsHelper() }
     private val mContactsDao: ContactsDao = ContactsDataBase.getInstance(getApplication()).contactsDao()
     private val MDELAY_MILLIS = 3000L
@@ -36,19 +37,28 @@ class ContactsViewModel(application: Application, private val defTitle: String =
 
     private var mLocalData = mutableListOf<ContactsModel>()
 
-    fun getContacts() {
-        message.value = "数据请求中，请稍后！"
-        if (mLocalData.isEmpty()) {
+    fun getContacts(refresh: Boolean): LiveData<List<ContactsModel>> {
+        message.value = ""
+        if (refresh) {
             getDataFromRemote()
-        } else {
-            getDataFromLocal()
+        } else if (contactsList.value == null || contactsList.value?.size ?: 0 <= 0) {
+            message.value = "数据请求中，请稍后！"
+            if (mLocalData.isEmpty()) {
+                getDataFromLocal()
+            }
         }
+        return contactsList
     }
 
     private fun getDataFromLocal() {
         val runnable = Runnable {
-            title.postValue("Local contacts")
-            contactsList.postValue(mContactsDao.getAllContacts())
+            val dao = mContactsDao.getAllContacts()
+            if (dao.isNotEmpty()) {
+                title.postValue("Local contacts")
+                contactsList.postValue(mContactsDao.getAllContacts())
+            } else {
+                getDataFromRemote()
+            }
         }
         mExecutors.disIoExecutor.execute(runnable)
     }
@@ -57,18 +67,22 @@ class ContactsViewModel(application: Application, private val defTitle: String =
         Handler().postDelayed({
             contactsList.value = mRemoteData
             mLocalData = mRemoteData
-            mRemoteData.forEach {
-                val runnable = Runnable {
-                    mContactsDao.insertContacts(it)
-                }
-                mExecutors.disIoExecutor.execute(runnable)
-            }
+            saveContacts(mRemoteData)
             Thread(Runnable {
                 title.postValue("Remote Contacts")
             }).start()
 //                Log.d("idisfkj", "background request")
             message.value = "数据加载完成~"
         }, MDELAY_MILLIS)
+    }
+
+    private fun saveContacts(saveData: MutableList<ContactsModel>) {
+        saveData.forEach {
+            val runnable = Runnable {
+                mContactsDao.insertContacts(it)
+            }
+            mExecutors.disIoExecutor.execute(runnable)
+        }
     }
 
 
