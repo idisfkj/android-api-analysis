@@ -20,5 +20,7 @@
 
 [Android Architecture Components Part3:Lifecycle](https://idisfkj.github.io/2018/06/14/Android-Architecture-Components-Part3-Lifecycle/)
 
+[Android Architecture Components Part4:ViewModel](https://idisfkj.github.io/2018/06/22/Android-Architecture-Components-Part4-ViewModel/)
+
 # 关注
 ![关注](https://github.com/idisfkj/android-api-analysis/raw/master/image/wx.jpg)
