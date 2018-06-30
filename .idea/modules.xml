@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android-api-analysis.iml" filepath="$PROJECT_DIR$/android-api-analysis.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/butterknife-annotations/butterknife-annotations.iml" filepath="$PROJECT_DIR$/butterknife-annotations/butterknife-annotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/butterknife-bind/butterknife-bind.iml" filepath="$PROJECT_DIR$/butterknife-bind/butterknife-bind.iml" />
+      <module fileurl="file://$PROJECT_DIR$/butterknife-compiler/butterknife-compiler.iml" filepath="$PROJECT_DIR$/butterknife-compiler/butterknife-compiler.iml" />
     </modules>
   </component>
 </project>

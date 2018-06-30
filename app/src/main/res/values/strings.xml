@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidApiAnalysis</string>
+    <string name="public_service">怪谈时间到了</string>
+    <string name="personal_wx">fan331100</string>
+    <string name="public_service_click_toast">欢迎关注公众号:怪谈时间到了</string>
+    <string name="personal_wx_click_toast">欢迎添加个人微信号:fan331100</string>
 </resources>

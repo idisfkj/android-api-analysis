@@ -9,6 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/butterknife-annotations" />
+            <option value="$PROJECT_DIR$/butterknife-bind" />
+            <option value="$PROJECT_DIR$/butterknife-compiler" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
