@@ -22,5 +22,13 @@
 
 [Android Architecture Components Part4:ViewModel](https://idisfkj.github.io/2018/06/22/Android-Architecture-Components-Part4-ViewModel/)
 
+## TODO
+敬请期待下一个系列：Android Annotation Processing
+
+该系列将会从原理与结合实例来分析Android注解相关的知识，类似与ButterKnife、Dagger2、Room等库注解的使用。
+将手把手教你实现自己的注解库。
+
+如需了解更多可以扫描下方二维码，加入我们：怪谈时间到了。让我们与志同道合的你一起成长。
+
 # 关注
 ![关注](https://github.com/idisfkj/android-api-analysis/raw/master/image/wx.jpg)
