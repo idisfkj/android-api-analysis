@@ -22,7 +22,12 @@
 
 [Android Architecture Components Part4:ViewModel](https://idisfkj.github.io/2018/06/22/Android-Architecture-Components-Part4-ViewModel/)
 
-## TODO
+## Android Annotation Processing
+请将分支切换到feat_annotation_processing
+
+[自定义Android注解Part1:注解变量](https://idisfkj.github.io/2018/07/01/%E8%87%AA%E5%AE%9A%E4%B9%89Android%E6%B3%A8%E8%A7%A3Part1-%E6%B3%A8%E8%A7%A3%E5%8F%98%E9%87%8F/)
+
+## Doing
 敬请期待下一个系列：Android Annotation Processing
 
 该系列将会从原理与结合实例来分析Android注解相关的知识，类似与ButterKnife、Dagger2、Room等库注解的使用。
