@@ -27,6 +27,8 @@
 
 [自定义Android注解Part1:注解变量](https://idisfkj.github.io/2018/07/01/%E8%87%AA%E5%AE%9A%E4%B9%89Android%E6%B3%A8%E8%A7%A3Part1-%E6%B3%A8%E8%A7%A3%E5%8F%98%E9%87%8F/)
 
+[自定义Android注解Part2:代码自动生成](https://idisfkj.github.io/2018/07/04/%E8%87%AA%E5%AE%9A%E4%B9%89Android%E6%B3%A8%E8%A7%A3Part2-%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90/)
+
 ## Doing
 敬请期待下一个系列：Android Annotation Processing
 
