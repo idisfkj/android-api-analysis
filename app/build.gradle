@@ -17,9 +17,21 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        butterknifeDefault {
+            storeFile file('butterknife.keystore')
+            storePassword 'butterknife'
+            keyAlias 'key'
+            keyPassword 'butterknife'
+            v2SigningEnabled true
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            signingConfig signingConfigs.butterknifeDefault
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

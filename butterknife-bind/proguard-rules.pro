@@ -19,3 +19,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-keep class com.idisfkj.butterknife.annotations.Keep**
+-keep @com.idisfkj.butterknife.annotations.Keep public class *
+-keepclassmembers @com.idisfkj.butterknife.annotations.Keep class ** {*;}
