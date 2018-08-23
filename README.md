@@ -31,6 +31,11 @@
 
 [自定义Android注解Part3绑定](https://idisfkj.github.io/2018/07/11/%E8%87%AA%E5%AE%9A%E4%B9%89Android%E6%B3%A8%E8%A7%A3Part3-%E7%BB%91%E5%AE%9A/)
 
+## ViewDragHelper
+请将分支切换到feat_viewdraghelper_dev
+
+[ViewDragHelper之手势操作神器](https://idisfkj.github.io/2018/08/19/ViewDragHelper%E4%B9%8B%E6%89%8B%E5%8A%BF%E6%93%8D%E4%BD%9C%E7%A5%9E%E5%99%A8/)
+
 # 关注
 如需了解更多可以扫描下方二维码，加入我们：怪谈时间到了。让我们与志同道合的你一起成长。
 
