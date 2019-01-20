@@ -12,10 +12,10 @@ import com.idisfkj.androidapianalysis.paint.PaintActivity
  */
 class ActivityUtils {
     companion object {
-        val EXTRA_DATA = "extra_data"
-        private val BITMAP_TYPE = 1
-        private val CONSTRAINT_LAYOUT_TYPE = 2
-        private val PAINT_TYPE = 3
+        const val EXTRA_DATA = "extra_data"
+        private const val BITMAP_TYPE = 1
+        private const val CONSTRAINT_LAYOUT_TYPE = 2
+        private const val PAINT_TYPE = 3
 
         private fun createMainModel(type: Int): MainModel = when (type) {
             BITMAP_TYPE -> MainModel("About of Bitmap", type, "Bitmap", R.layout.activity_bitmap)
