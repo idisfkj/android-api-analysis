@@ -40,7 +40,8 @@ class BitmapActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun getExtraData(): MainModel =
-            intent?.extras?.getParcelable(ActivityUtils.EXTRA_DATA) ?: throw NullPointerException("intent or extras is null")
+            intent?.extras?.getParcelable(ActivityUtils.EXTRA_DATA)
+                    ?: throw NullPointerException("intent or extras is null")
 
     private fun setupListener() {
         create_bitmap.setOnClickListener(this)
@@ -126,7 +127,7 @@ class BitmapActivity : AppCompatActivity(), View.OnClickListener {
                 decodeFile()
             }
             R.id.relative_article -> {
-                WebViewArticleActivity.navigationPage(BitmapActivity@ this, "Bitmap的图片压缩汇总", "https://idisfkj.github.io/2018/03/21/Bitmap%E7%9A%84%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E6%B1%87%E6%80%BB/")
+                WebViewArticleActivity.navigationPage(this, "Bitmap的图片压缩汇总", "https://www.rousetime.com/2018/03/21/Bitmap%E7%9A%84%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E6%B1%87%E6%80%BB/")
             }
         }
     }

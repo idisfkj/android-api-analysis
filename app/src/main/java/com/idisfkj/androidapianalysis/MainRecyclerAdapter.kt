@@ -11,8 +11,7 @@ import android.view.ViewGroup
 class MainRecyclerAdapter : RecyclerView.Adapter<MainRecyclerItemVH>() {
     private val mDataList by lazy { arrayListOf<MainModel>() }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MainRecyclerItemVH
-            = MainRecyclerItemVH(LayoutInflater.from(parent?.context).inflate(R.layout.main_recycler_item_layout, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MainRecyclerItemVH = MainRecyclerItemVH(LayoutInflater.from(parent?.context).inflate(R.layout.main_recycler_item_layout, parent, false))
 
     override fun getItemCount(): Int = mDataList.size
 
@@ -23,4 +22,7 @@ class MainRecyclerAdapter : RecyclerView.Adapter<MainRecyclerItemVH>() {
     fun addAll(list: List<MainModel>) {
         mDataList.addAll(list)
     }
+
+    fun getItemData(position: Int) = if (position < mDataList.size) mDataList[position]
+            else throw IndexOutOfBoundsException("the position $position out of size ${mDataList.size}")
 }
