@@ -40,7 +40,13 @@
 
 [你不该忽略的LaunchMode](https://www.rousetime.com/2019/01/03/%E4%BD%A0%E4%B8%8D%E8%AF%A5%E5%BF%BD%E7%95%A5%E7%9A%84LaunchMode/)
 
+## Doing
+
+Android Gradle系列-入门篇
+Android Gradle系列-原理篇
+Android Gradle系列-运用篇
+
 # 关注
-如需了解更多可以扫描下方二维码，加入我们：怪谈时间。让我们与志同道合的你一起成长。
+如需了解更多可以扫描下方二维码，加入我们：Android补给站。让我们与志同道合的你一起成长。
 
 ![关注](https://github.com/idisfkj/android-api-analysis/raw/master/image/wx.jpg)
