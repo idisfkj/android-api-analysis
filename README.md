@@ -40,6 +40,10 @@
 
 [你不该忽略的LaunchMode](https://www.rousetime.com/2019/01/03/%E4%BD%A0%E4%B8%8D%E8%AF%A5%E5%BF%BD%E7%95%A5%E7%9A%84LaunchMode/)
 
+# Gson解析
+
+[Gson与List<T>对象间的相亲之旅](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&tempkey=MTAwOF9wNzQrRVk1Q1RNT2xNT0VpQjJqM3V4aTZCaDl0SHhFUWJLTFJaVmhzZURPM2JSdkcxcGo1ajQtMHYyOWdEQUI5N18xaUVnRVh4VmRCbVNQbkVGbnBRV1Rjbm5yNl9zVC1uQTM3eE9HSzlLTy00QU40UXJYTWNubzlxRE5nQkc2dDZCZGM0SE1uR1ZRamJKOU1zeVk4c0tUYjV1WUFET3QtX29oVHJ3fn4%3D&chksm=68e0f8255f977133736be6ac7950dac37b591539d381a6f281e4c0d38f885209f8c81068b4ee#rd)
+
 ## Doing
 
 [Android Gradle系列-入门篇](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247483821&idx=1&sn=dce064a98e8b3ba6ddf217db34bec7d7&chksm=e8e0f83ddf97712b21e615f128ea3b94bdc217c931e2d343974899c62662fdedbf2248e9cdfd&xtrack=1&scene=90&subscene=93&sessionid=1557203855&clicktime=1557203857&ascene=56&devicetype=android-26&version=27000439&nettype=WIFI&abtest_cookie=BAABAAoACwASABMABQBWmR4AvpkeANyZHgDimR4A8ZkeAAAA&lang=zh_CN&pass_ticket=wt8OMJkRRD0NTILVozc2eSNJAFDcycfjiw9mPbqW9dI6pFNc%2FrE3CTRiDR%2Bfx%2BLf&wx_header=1)
