@@ -48,7 +48,7 @@
 
 [Android Gradle系列-入门篇](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247483821&idx=1&sn=dce064a98e8b3ba6ddf217db34bec7d7&chksm=e8e0f83ddf97712b21e615f128ea3b94bdc217c931e2d343974899c62662fdedbf2248e9cdfd&xtrack=1&scene=90&subscene=93&sessionid=1557203855&clicktime=1557203857&ascene=56&devicetype=android-26&version=27000439&nettype=WIFI&abtest_cookie=BAABAAoACwASABMABQBWmR4AvpkeANyZHgDimR4A8ZkeAAAA&lang=zh_CN&pass_ticket=wt8OMJkRRD0NTILVozc2eSNJAFDcycfjiw9mPbqW9dI6pFNc%2FrE3CTRiDR%2Bfx%2BLf&wx_header=1)
 
-Android Gradle系列-原理篇
+[Android Gradle系列-原理篇](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247483834&idx=1&sn=55264aaad1f018b55280beec93ed4cac&chksm=e8e0f82adf97713c5a43c67b67fbabd659578328a22a406c5a01bd69ccf550e88bf645b15457&token=2079168237&lang=zh_CN#rd)
 
 Android Gradle系列-运用篇
 
