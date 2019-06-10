@@ -44,7 +44,7 @@
 
 [Gson与List<T>对象间的相亲之旅](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&tempkey=MTAwOF9wNzQrRVk1Q1RNT2xNT0VpQjJqM3V4aTZCaDl0SHhFUWJLTFJaVmhzZURPM2JSdkcxcGo1ajQtMHYyOWdEQUI5N18xaUVnRVh4VmRCbVNQbkVGbnBRV1Rjbm5yNl9zVC1uQTM3eE9HSzlLTy00QU40UXJYTWNubzlxRE5nQkc2dDZCZGM0SE1uR1ZRamJKOU1zeVk4c0tUYjV1WUFET3QtX29oVHJ3fn4%3D&chksm=68e0f8255f977133736be6ac7950dac37b591539d381a6f281e4c0d38f885209f8c81068b4ee#rd)
 
-## Doing
+## Gradle
 将分支切换到feat_gradle_dev
 
 [Android Gradle系列-入门篇](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247483821&idx=1&sn=dce064a98e8b3ba6ddf217db34bec7d7&chksm=e8e0f83ddf97712b21e615f128ea3b94bdc217c931e2d343974899c62662fdedbf2248e9cdfd&xtrack=1&scene=90&subscene=93&sessionid=1557203855&clicktime=1557203857&ascene=56&devicetype=android-26&version=27000439&nettype=WIFI&abtest_cookie=BAABAAoACwASABMABQBWmR4AvpkeANyZHgDimR4A8ZkeAAAA&lang=zh_CN&pass_ticket=wt8OMJkRRD0NTILVozc2eSNJAFDcycfjiw9mPbqW9dI6pFNc%2FrE3CTRiDR%2Bfx%2BLf&wx_header=1)
@@ -53,7 +53,7 @@
 
 [Android Gradle系列-运用篇](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247483840&idx=1&sn=f4392bba9a85d79d84e823f2b83aa668&chksm=e8e0f850df9771462447aec9c7275b70e576bd17f20c7eeb703116eb1c23fe534ad796996515&token=1041803379&lang=zh_CN#rd)
 
-Android Gradle系列-进阶篇
+[Android Gradle系列-进阶篇](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247483845&idx=1&sn=6208df8f9a0394e11e86e180288b2048&chksm=e8e0f855df9771439ded464c26501d23ebf450fe90f0390cc0698e3fe431217b8b9e91927d27&token=330677494&lang=zh_CN#rd)
 
 # 关注
 如需了解更多可以扫描下方二维码，加入我们：Android补给站。让我们与志同道合的你一起成长。
