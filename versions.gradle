@@ -2,12 +2,12 @@ ext.deps = [:]
 
 def versions = [:]
 versions.support = "26.1.0"
-versions.kotlin = "1.2.51"
-versions.constraint_layout = "1.1.0-beta6"
+versions.kotlin = "1.1.51"
+versions.constraint_layout = "1.0.2"
 versions.runner = "1.0.1"
 versions.espresso_core = "3.0.1"
 versions.junit = "4.12"
-versions.gradle = '3.2.1'
+versions.gradle = "3.0.0"
 
 def deps = [:]
 
@@ -32,7 +32,7 @@ ext.deps = deps
 def build_versions = [:]
 build_versions.target_sdk = 26
 build_versions.min_sdk = 16
-build_versions.build_tools = "28.0.3"
+build_versions.build_tools = "26.0.2"
 ext.build_versions = build_versions
 
 def addRepos(RepositoryHandler handler) {

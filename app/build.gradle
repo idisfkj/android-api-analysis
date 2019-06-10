@@ -5,12 +5,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion build_versions.target_sdk
-    buildToolsVersion build_versions.build_tools
+    compileSdkVersion Versions.target_sdk
+    buildToolsVersion Versions.build_tools
     defaultConfig {
         applicationId "com.idisfkj.androidapianalysis"
-        minSdkVersion build_versions.min_sdk
-        targetSdkVersion build_versions.target_sdk
+        minSdkVersion Versions.min_sdk
+        targetSdkVersion Versions.target_sdk
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -112,13 +112,13 @@ afterEvaluate {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // support
-    implementation deps.support.app_compat
-    implementation deps.support.recyclerview
+    implementation Dependencies.app_compat
+    implementation Dependencies.recyclerView
     //constraint-layout
-    implementation deps.constraint_layout
+    implementation Dependencies.constraint_layout
     //kotlin
-    implementation deps.kotlin.kotlin_stdlib
-    testImplementation deps.junit
-    androidTestImplementation deps.runner
-    androidTestImplementation deps.espresso_core
+    implementation Dependencies.kotlin_stdlib
+    testImplementation Dependencies.junit
+    androidTestImplementation Dependencies.runner
+    androidTestImplementation Dependencies.espresso_core
 }
