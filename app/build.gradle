@@ -5,34 +5,120 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion build_versions.target_sdk
-    buildToolsVersion build_versions.build_tools
+    compileSdkVersion Versions.target_sdk
+    buildToolsVersion Versions.build_tools
     defaultConfig {
         applicationId "com.idisfkj.androidapianalysis"
-        minSdkVersion build_versions.min_sdk
-        targetSdkVersion build_versions.target_sdk
+        minSdkVersion Versions.min_sdk
+        targetSdkVersion Versions.target_sdk
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        config {
+            storeFile file('key.store')
+            keyAlias 'android'
+        }
+    }
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.config
+        }
+        outer {
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.config
+        }
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.config
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    //组合多个产品风格与纬度
+    flavorDimensions "mode", "api"
+    productFlavors {
+        dev {
+            applicationIdSuffix ".dev"
+            dimension "mode"
+            manifestPlaceholders = [PROJECT_NAME: "@string/app_name_dev",
+                                    APP_ID      : "21321843"]
+            buildConfigField 'String', 'API_URL', '"https://dev.idisfkj.android.com"'
+            buildConfigField 'String', 'APP_KEY', '"3824yk32"'
+        }
+        prod {
+            applicationIdSuffix ".prod"
+            dimension "mode"
+            manifestPlaceholders = [PROJECT_NAME: "@string/app_name",
+                                    APP_ID      : "12932843"]
+            buildConfigField 'String', 'API_URL', '"https://prod.idisfkj.android.com"'
+            buildConfigField 'String', 'APP_KEY', '"32143dsk2"'
+        }
+        minApi16 {
+            dimension "api"
+            minSdkVersion 16
+            versionCode 10000 + android.defaultConfig.versionCode
+            versionNameSuffix "-minApi16"
+        }
+        minApi21 {
+            dimension "api"
+            minSdkVersion 21
+            versionCode 20000 + android.defaultConfig.versionCode
+            versionNameSuffix "-minApi21"
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        if (variant.buildType.name == buildTypes.release.name) {
+            variant.outputs.all {
+                outputFileName = "analysis-release-${defaultConfig.versionName}.apk"
+            }
+        }
+    }
+
+    // 过滤变体
+    variantFilter { variant ->
+        def names = variant.flavors*.name
+        if (names.contains("minApi16") && names.contains("dev")) {
+            setIgnore(true)
+        }
+    }
+//    sourceSets {
+//        //设置默认main源集配置
+//        main {
+//            res.srcDirs = ['src/prodMinApi21Release/res']
+//        }
+//    }
+}
+
+afterEvaluate {
+    def propsFile = rootProject.file('keystore.properties')
+    def configName = 'config'
+    if (propsFile.exists() && android.signingConfigs.hasProperty(configName)) {
+        def props = new Properties()
+        props.load(new FileInputStream(propsFile))
+        android.signingConfigs[configName].keyPassword = props['keyPassword']
+        android.signingConfigs[configName].storePassword = props['storePassword']
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // support
-    implementation deps.support.app_compat
-    implementation deps.support.recyclerview
+    implementation Dependencies.app_compat
+    implementation Dependencies.recyclerView
     //constraint-layout
-    implementation deps.constraint_layout
+    implementation Dependencies.constraint_layout
     //kotlin
-    implementation deps.kotlin.kotlin_stdlib
-    testImplementation deps.junit
-    androidTestImplementation deps.runner
-    androidTestImplementation deps.espresso_core
+    implementation Dependencies.kotlin_stdlib
+    testImplementation Dependencies.junit
+    androidTestImplementation Dependencies.runner
+    androidTestImplementation Dependencies.espresso_core
 }
