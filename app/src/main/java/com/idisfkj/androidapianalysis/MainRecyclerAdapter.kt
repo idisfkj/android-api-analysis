@@ -1,8 +1,8 @@
 package com.idisfkj.androidapianalysis
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 
 /**
  * Created by idisfkj on 2018/4/18.
@@ -11,11 +11,11 @@ import android.view.ViewGroup
 class MainRecyclerAdapter : RecyclerView.Adapter<MainRecyclerItemVH>() {
     private val mDataList by lazy { arrayListOf<MainModel>() }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MainRecyclerItemVH = MainRecyclerItemVH(LayoutInflater.from(parent?.context).inflate(R.layout.main_recycler_item_layout, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainRecyclerItemVH = MainRecyclerItemVH(LayoutInflater.from(parent?.context).inflate(R.layout.main_recycler_item_layout, parent, false))
 
     override fun getItemCount(): Int = mDataList.size
 
-    override fun onBindViewHolder(holder: MainRecyclerItemVH?, position: Int) {
+    override fun onBindViewHolder(holder: MainRecyclerItemVH, position: Int) {
         holder?.bindData(mDataList[position], position)
     }
 

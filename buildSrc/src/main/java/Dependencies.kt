@@ -7,14 +7,14 @@ import java.net.URI
  * Email : idisfkj@gmail.com.
  */
 object Versions {
-    const val support = "26.1.0"
+    const val support = "28.0.0"
     const val kotlin = "1.3.31"
     const val constraint_layout = "1.1.0-beta6"
     const val runner = "1.0.1"
     const val espresso_core = "3.0.1"
     const val junit = "4.12"
     const val gradle = "3.4.1"
-    const val target_sdk = 26
+    const val target_sdk = 28
     const val min_sdk = 16
     const val build_tools = "28.0.3"
 }

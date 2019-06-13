@@ -5,9 +5,9 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.support.v4.app.ActivityCompat
-import android.support.v7.widget.RecyclerView
 import android.view.View
+import androidx.core.app.ActivityCompat
+import androidx.recyclerview.widget.RecyclerView
 import com.idisfkj.androidapianalysis.utils.ActivityUtils
 import com.idisfkj.androidapianalysis.utils.LogUtils
 import kotlinx.android.synthetic.main.main_recycler_item_layout.view.*
@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.main_recycler_item_layout.view.*
  * Created by idisfkj on 2018/4/18.
  * Email : idisfkj@gmail.com.
  */
-class MainRecyclerItemVH(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+class MainRecyclerItemVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     fun bindData(value: MainModel, position: Int) {
         itemView.content.apply {

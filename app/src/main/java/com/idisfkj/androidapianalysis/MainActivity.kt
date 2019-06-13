@@ -3,9 +3,9 @@ package com.idisfkj.androidapianalysis
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.idisfkj.androidapianalysis.bitmap.BitmapActivity
 import com.idisfkj.androidapianalysis.utils.ActivityUtils
 import com.idisfkj.androidapianalysis.utils.LogUtils
