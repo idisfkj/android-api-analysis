@@ -12,7 +12,9 @@ class ConstraintLayoutItemActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(intent.extras.getInt(ActivityUtils.EXTRA_DATA))
+        intent?.extras?.let {
+            setContentView(it.getInt(ActivityUtils.EXTRA_DATA))
+        }
         title = "ConstraintLayout"
     }
 }

@@ -17,8 +17,8 @@ class WebViewArticleActivity : AppCompatActivity() {
     private var mPath: String? = null
 
     companion object {
-        val EXTRA_TITLE = "extra_title"
-        val EXTRA_PATH = "extra_path"
+        private const val EXTRA_TITLE = "extra_title"
+        private const val EXTRA_PATH = "extra_path"
         fun navigationPage(context: Context, title: String, path: String) {
             val intent = Intent(context, WebViewArticleActivity::class.java)
             intent.putExtra(EXTRA_TITLE, title)

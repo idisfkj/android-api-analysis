@@ -25,15 +25,15 @@ class ActivityUtils {
         }
 
         fun getMainModels(): List<MainModel> = mutableListOf(
-                ActivityUtils.createMainModel(ActivityUtils.BITMAP_TYPE),
-                ActivityUtils.createMainModel(ActivityUtils.CONSTRAINT_LAYOUT_TYPE),
-                ActivityUtils.createMainModel(ActivityUtils.PAINT_TYPE)
+                createMainModel(BITMAP_TYPE),
+                createMainModel(CONSTRAINT_LAYOUT_TYPE),
+                createMainModel(PAINT_TYPE)
         )
 
         fun getClassFromType(type: Int): Class<*> = when (type) {
-            ActivityUtils.BITMAP_TYPE -> BitmapActivity::class.java
-            ActivityUtils.CONSTRAINT_LAYOUT_TYPE -> ConstraintLayoutActivity::class.java
-            ActivityUtils.PAINT_TYPE -> PaintActivity::class.java
+            BITMAP_TYPE -> BitmapActivity::class.java
+            CONSTRAINT_LAYOUT_TYPE -> ConstraintLayoutActivity::class.java
+            PAINT_TYPE -> PaintActivity::class.java
             else -> throw IllegalArgumentException("$type -> This type is not supported")
         }
     }

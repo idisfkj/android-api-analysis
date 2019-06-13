@@ -16,7 +16,7 @@ class MainRecyclerAdapter : RecyclerView.Adapter<MainRecyclerItemVH>() {
     override fun getItemCount(): Int = mDataList.size
 
     override fun onBindViewHolder(holder: MainRecyclerItemVH, position: Int) {
-        holder?.bindData(mDataList[position], position)
+        holder.bindData(mDataList[position], position)
     }
 
     fun addAll(list: List<MainModel>) {
