@@ -17,6 +17,8 @@ object Versions {
     const val target_sdk = 28
     const val min_sdk = 16
     const val build_tools = "28.0.3"
+    const val arch_version = "2.2.0-alpha01"
+    const val arch_room_version = "2.1.0-rc01"
 }
 
 object Dependencies {
@@ -29,6 +31,13 @@ object Dependencies {
     val runner = "com.android.support.test:runner:${Versions.runner}"
     val espresso_core = "com.android.support.test.espresso:espresso-core:${Versions.espresso_core}"
     val gradle_plugin = "com.android.tools.build:gradle:${Versions.gradle}"
+    val arch_lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.arch_version}"
+    val arch_viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.arch_version}"
+    val arch_livedata = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.arch_version}"
+    val arch_runtime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.arch_version}"
+    val arch_room_runtime = "androidx.room:room-runtime:${Versions.arch_room_version}"
+    val arch_room_compiler = "androidx.room:room-compiler:${Versions.arch_room_version}"
+    val arch_room = "androidx.room:room-ktx:${Versions.arch_room_version}"
     val addRepos: (handler: RepositoryHandler) -> Unit = {
         it.google()
         it.jcenter()
