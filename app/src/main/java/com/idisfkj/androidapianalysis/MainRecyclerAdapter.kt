@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 class MainRecyclerAdapter : RecyclerView.Adapter<MainRecyclerItemVH>() {
     private val mDataList by lazy { arrayListOf<MainModel>() }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainRecyclerItemVH = MainRecyclerItemVH(LayoutInflater.from(parent?.context).inflate(R.layout.main_recycler_item_layout, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainRecyclerItemVH = MainRecyclerItemVH(LayoutInflater.from(parent.context).inflate(R.layout.main_recycler_item_layout, parent, false))
 
     override fun getItemCount(): Int = mDataList.size
 
