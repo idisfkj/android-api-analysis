@@ -7,9 +7,10 @@
 
 > 使用前请先切换到对应的分支
 
-### Next Doing
+### Kotlin Coroutine
+Branch: `feat_coroutine_dev`
 
-Kotlin Coroutine
+[What? 你还不知道Kotlin Coroutine?](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247483860&idx=1&sn=d8a4441912d0d1eee189d97506bb4689&chksm=e8e0f844df977152652d69a3b4cc3cd1d1a148609f4295b6142e6d577156b76905e1cb6b95be&token=1091218095&lang=zh_CN#rd)
 
 ### Bitmap的图片压缩相关
 Branch: `feat_bitmap_dev`
