@@ -7,6 +7,10 @@
 
 > 使用前请先切换到对应的分支
 
+### Doing
+
+Databinding Layout Resource 插件化生成
+
 ### Kotlin Coroutine
 Branch: `feat_coroutine_dev`
 
