@@ -1,4 +1,3 @@
-
 import org.gradle.api.artifacts.dsl.RepositoryHandler
 import java.net.URI
 
@@ -19,6 +18,8 @@ object Versions {
     const val build_tools = "28.0.3"
     const val arch_version = "2.2.0-alpha01"
     const val arch_room_version = "2.1.0-rc01"
+    const val paging_version = "2.1.0"
+    const val anko_version = "0.10.8"
 }
 
 object Dependencies {
@@ -38,6 +39,9 @@ object Dependencies {
     val arch_room_runtime = "androidx.room:room-runtime:${Versions.arch_room_version}"
     val arch_room_compiler = "androidx.room:room-compiler:${Versions.arch_room_version}"
     val arch_room = "androidx.room:room-ktx:${Versions.arch_room_version}"
+    val paging_runtime = "androidx.paging:paging-runtime:${Versions.paging_version}"
+    val anko = "org.jetbrains.anko:anko:${Versions.anko_version}"
+
     val addRepos: (handler: RepositoryHandler) -> Unit = {
         it.google()
         it.jcenter()

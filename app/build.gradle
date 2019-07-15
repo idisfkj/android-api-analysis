@@ -23,6 +23,11 @@ android {
             keyAlias 'android'
         }
     }
+
+    dataBinding {
+        enabled true
+    }
+
     buildTypes {
         debug {
             minifyEnabled false
@@ -127,7 +132,10 @@ dependencies {
     implementation Dependencies.arch_runtime
     implementation Dependencies.arch_room_runtime
     implementation Dependencies.arch_room
+    implementation Dependencies.paging_runtime
     kapt Dependencies.arch_room_compiler
+    // anko
+    implementation Dependencies.anko
 
     testImplementation Dependencies.junit
     androidTestImplementation Dependencies.runner
