@@ -9,9 +9,17 @@
 
 ## Doing
 
-只需三步实现Databinding插件化
+在Android Architecture Components刚出来时，我就进行了研究，也写了一系列相关文章。
 
-> 正在准备中，这周会发布，敬请期待~
+最近一段时间该组件又发布了其它的新内容，所以接下来会对Android Architecture Components系列进行完善。
+
+首先是Paging相关的内容，敬请期待！
+
+### Databinding Plugin
+
+[只需三步实现Databinding插件化](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247483993&idx=1&sn=1c6d7a776a6f8bdc0ce9786fb0087c46&chksm=e8e0fbc9df9772dfdeef5f174e9325010445ac117d5042ea06a81fb3d38d2c597667047c9e46&token=1514380520&lang=zh_CN#rd)
+
+> 由于这是一个小工具，所以我将它独立于另一个[仓库](https://github.com/idisfkj/databinding_autorun)
 
 ### Kotlin Coroutine
 Branch: `feat_coroutine_dev`
