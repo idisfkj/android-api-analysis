@@ -45,7 +45,7 @@ object Dependencies {
     val arch_room_runtime = "androidx.room:room-runtime:${Versions.arch_room_version}"
     val arch_room_compiler = "androidx.room:room-compiler:${Versions.arch_room_version}"
     val arch_room = "androidx.room:room-ktx:${Versions.arch_room_version}"
-    val paging_runtime = "androidx.paging:paging-runtime:${Versions.paging_version}"
+    val paging_runtime = "androidx.paging:paging-runtime-ktx:${Versions.paging_version}"
     val anko = "org.jetbrains.anko:anko:${Versions.anko_version}"
     val glide_runtime = "com.github.bumptech.glide:glide:${Versions.glide}"
     val glide_compiler = "com.github.bumptech.glide:compiler:${Versions.glide}"

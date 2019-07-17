@@ -14,6 +14,7 @@ import com.idisfkj.androidapianalysis.model.ArticleModel
 @Dao
 interface ArticleDao {
 
+    // PositionalDataSource
     @Query("SELECT * FROM article")
     fun getAll(): DataSource.Factory<Int, ArticleModel>
 
