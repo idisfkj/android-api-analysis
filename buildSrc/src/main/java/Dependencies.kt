@@ -1,3 +1,4 @@
+
 import org.gradle.api.artifacts.dsl.RepositoryHandler
 import java.net.URI
 
@@ -20,6 +21,11 @@ object Versions {
     const val arch_room_version = "2.1.0-rc01"
     const val paging_version = "2.1.0"
     const val anko_version = "0.10.8"
+    const val glide = "4.8.0"
+    const val retrofit = "2.3.0"
+    const val okhttp_logging_interceptor = "3.9.0"
+    const val rx_android = "2.0.1"
+    const val rxjava2 = "2.1.3"
 }
 
 object Dependencies {
@@ -41,6 +47,13 @@ object Dependencies {
     val arch_room = "androidx.room:room-ktx:${Versions.arch_room_version}"
     val paging_runtime = "androidx.paging:paging-runtime:${Versions.paging_version}"
     val anko = "org.jetbrains.anko:anko:${Versions.anko_version}"
+    val glide_runtime = "com.github.bumptech.glide:glide:${Versions.glide}"
+    val glide_compiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+    val retrofit_runtime = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    val retrofit_gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    val okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp_logging_interceptor}"
+    val rxjava2 = "io.reactivex.rxjava2:rxjava:${Versions.rxjava2}"
+    val rx_android = "io.reactivex.rxjava2:rxandroid:${Versions.rx_android}"
 
     val addRepos: (handler: RepositoryHandler) -> Unit = {
         it.google()
