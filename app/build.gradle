@@ -121,11 +121,11 @@ dependencies {
     // support
     implementation Dependencies.app_compat
     implementation Dependencies.recyclerView
-    //constraint-layout
+    // constraint-layout
     implementation Dependencies.constraint_layout
-    //kotlin
+    // kotlin
     implementation Dependencies.kotlin_stdlib
-    //architecture component
+    // architecture component
     implementation Dependencies.arch_lifecycle
     implementation Dependencies.arch_viewmodel
     implementation Dependencies.arch_livedata
@@ -136,6 +136,16 @@ dependencies {
     kapt Dependencies.arch_room_compiler
     // anko
     implementation Dependencies.anko
+    // rxjava
+    implementation Dependencies.rxjava2
+    implementation Dependencies.rx_android
+    // retrofit
+    implementation Dependencies.retrofit_runtime
+    implementation Dependencies.retrofit_gson
+    implementation Dependencies.okhttp_logging_interceptor
+    // glide
+    implementation Dependencies.glide_runtime
+    kapt Dependencies.glide_compiler
 
     testImplementation Dependencies.junit
     androidTestImplementation Dependencies.runner
