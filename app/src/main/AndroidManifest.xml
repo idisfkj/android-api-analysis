@@ -29,6 +29,7 @@
         <activity android:name=".paint.PaintActivity" />
         <activity android:name=".paint.PaintCodeAnalysisActivity" />
         <activity android:name=".paging.PagingActivity" />
+        <activity android:name=".news.NewsActivity" />
     </application>
 
 </manifest>
