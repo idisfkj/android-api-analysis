@@ -143,6 +143,7 @@ dependencies {
     implementation Dependencies.retrofit_runtime
     implementation Dependencies.retrofit_gson
     implementation Dependencies.okhttp_logging_interceptor
+    implementation Dependencies.retrofit_adapter_rxjava2
     // glide
     implementation Dependencies.glide_runtime
     kapt Dependencies.glide_compiler
