@@ -49,7 +49,7 @@ Branch: `feat_architecture_components`
 
 Branch: `feat_paging_dev`
 
-[Paging在RecyclerView中的应用，有这一篇就够了](https://www.rousetime.com/2019/07/25/Paging%E5%9C%A8RecyclerView%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%8C%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86/)
+[Paging在RecyclerView中的应用，有这一篇就够了](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484096&idx=1&sn=c87f8a38fe75108ccdc1883116efc78e&chksm=e8e0fb50df9772460b5ee546b4474c46b58f0433eb75a9029d7ec41bc9d50bea225f880183d6&token=1605536465&lang=zh_CN#rd)
 
 ### Android Annotation Processing
 Branch: `feat_annotation_processing`
