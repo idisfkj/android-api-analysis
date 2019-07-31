@@ -13,7 +13,7 @@
 
 最近一段时间该组件又发布了其它的新内容，所以接下来会对Android Architecture Components系列进行完善。
 
-首先是Paging相关的内容，敬请期待！
+接下来是WorkManager相关的内容，敬请期待！
 
 ### Databinding Plugin
 
@@ -46,6 +46,10 @@ Branch: `feat_architecture_components`
 [Android Architecture Components Part3:Lifecycle](https://www.rousetime.com/2018/06/14/Android-Architecture-Components-Part3-Lifecycle/)
 
 [Android Architecture Components Part4:ViewModel](https://www.rousetime.com/2018/06/22/Android-Architecture-Components-Part4-ViewModel/)
+
+Branch: `feat_paging_dev`
+
+[Paging在RecyclerView中的应用，有这一篇就够了](https://www.rousetime.com/2019/07/25/Paging%E5%9C%A8RecyclerView%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%8C%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86/)
 
 ### Android Annotation Processing
 Branch: `feat_annotation_processing`
