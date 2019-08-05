@@ -1,4 +1,3 @@
-
 import org.gradle.api.artifacts.dsl.RepositoryHandler
 import java.net.URI
 
@@ -26,6 +25,7 @@ object Versions {
     const val okhttp_logging_interceptor = "3.9.0"
     const val rx_android = "2.0.1"
     const val rxjava2 = "2.1.3"
+    const val work_version = "2.1.0"
 }
 
 object Dependencies {
@@ -55,6 +55,7 @@ object Dependencies {
     val okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp_logging_interceptor}"
     val rxjava2 = "io.reactivex.rxjava2:rxjava:${Versions.rxjava2}"
     val rx_android = "io.reactivex.rxjava2:rxandroid:${Versions.rx_android}"
+    val work_runtime = "androidx.work:work-runtime-ktx:${Versions.work_version}"
 
     val addRepos: (handler: RepositoryHandler) -> Unit = {
         it.google()
