@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.idisfkj.androidapianalysis.workmanager.vm.BlurVM" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="187dp"
+            android:src="@drawable/yaodaoji" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="@{vm.processEnable}"
+                android:onClick="@{() -> vm.processClick()}"
+                android:padding="15dp"
+                android:text="@string/process_image"
+                android:textSize="12sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:enabled="@{vm.showImageEnable}"
+                android:onClick="@{() -> vm.showImageClick()}"
+                android:padding="15dp"
+                android:text="@string/show_image"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/blur_image"
+            android:layout_width="300dp"
+            android:layout_height="187dp"
+            app:image_uri="@{vm.blurUri}"
+            tools:src="@drawable/yaodaoji" />
+
+    </LinearLayout>
+
+</layout>

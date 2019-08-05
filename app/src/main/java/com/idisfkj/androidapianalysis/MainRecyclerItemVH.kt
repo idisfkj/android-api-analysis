@@ -22,7 +22,7 @@ class MainRecyclerItemVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         itemView.content.apply {
             text = value.content
             setOnClickListener {
-                if (position == 0) {
+                if (value.type == ActivityUtils.BITMAP_TYPE || value.type == ActivityUtils.BLUR_IMAGE_TYPE) {
                     requestPermission(context, value)
                 } else {
                     navigationPage(context, value)
