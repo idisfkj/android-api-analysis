@@ -50,6 +50,7 @@ class NewsActivity : AppCompatActivity() {
 
         })[NewsVM::class.java]
         dataBinding.setVariable(BR.vm, newsVM)
+        dataBinding.lifecycleOwner = this
     }
 
     private fun addObserve() {
