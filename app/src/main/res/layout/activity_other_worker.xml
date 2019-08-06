@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.idisfkj.androidapianalysis.workmanager.vm.OtherWorkerVM" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="@{vm.periodicEnable}"
+            android:onClick="@{() -> vm.periodicClick()}"
+            android:padding="15dp"
+            android:text="@string/periodic_work"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:enabled="@{vm.constraintsEnable}"
+            android:onClick="@{() -> vm.constraintClick()}"
+            android:padding="15dp"
+            android:text="@string/constraint_work"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:onClick="@{() -> vm.cancelClick()}"
+            android:padding="15dp"
+            android:text="@string/cancel"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</layout>

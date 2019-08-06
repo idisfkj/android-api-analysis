@@ -28,6 +28,7 @@
         <activity android:name=".paint.PaintActivity" />
         <activity android:name=".paint.PaintCodeAnalysisActivity" />
         <activity android:name=".workmanager.BlurImageActivity" />
+        <activity android:name=".workmanager.OtherWorkerActivity" />
     </application>
 
 </manifest>
