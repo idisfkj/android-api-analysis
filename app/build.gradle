@@ -144,6 +144,9 @@ dependencies {
     implementation Dependencies.paging_runtime
     implementation Dependencies.work_runtime
     kapt Dependencies.arch_room_compiler
+    // navigation
+    implementation Dependencies.nav_fragment
+    implementation Dependencies.nav_ui
     // anko
     implementation Dependencies.anko
     // rxjava
