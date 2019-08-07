@@ -26,6 +26,7 @@ object Versions {
     const val rx_android = "2.0.1"
     const val rxjava2 = "2.1.3"
     const val work_version = "2.1.0"
+    const val nav_version = "2.1.0-beta02"
 }
 
 object Dependencies {
@@ -56,6 +57,8 @@ object Dependencies {
     val rxjava2 = "io.reactivex.rxjava2:rxjava:${Versions.rxjava2}"
     val rx_android = "io.reactivex.rxjava2:rxandroid:${Versions.rx_android}"
     val work_runtime = "androidx.work:work-runtime-ktx:${Versions.work_version}"
+    val nav_fragment = "androidx.navigation:navigation-fragment-ktx:${Versions.nav_version}"
+    val nav_ui = "androidx.navigation:navigation-ui-ktx:${Versions.nav_version}"
 
     val addRepos: (handler: RepositoryHandler) -> Unit = {
         it.google()
