@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcome_fragment">
+
+    <fragment
+        android:id="@+id/welcome_fragment"
+        android:name="com.idisfkj.androidapianalysis.navigation.fragment.WelcomeFragment"
+        android:label="welcome_fragment"
+        tools:layout="@layout/fragment_welcome">
+
+        <action
+            android:id="@+id/action_go_to_register_page"
+            app:destination="@id/register_fragment" />
+
+        <action
+            android:id="@+id/action_go_to_order_list_page"
+            app:destination="@id/order_list_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/register_fragment"
+        android:name="com.idisfkj.androidapianalysis.navigation.fragment.RegisterFragment"
+        android:label="register_fragment"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_go_to_shop_list_page"
+            app:destination="@id/shop_list_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/shop_list_fragment"
+        android:name="com.idisfkj.androidapianalysis.navigation.fragment.ShopListFragment"
+        android:label="shop_list_fragment"
+        tools:layout="@layout/fragment_shop_list">
+
+        <action
+            android:id="@+id/action_go_to_shop_detail_page"
+            app:destination="@id/shop_detail_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/shop_detail_fragment"
+        android:name="com.idisfkj.androidapianalysis.navigation.fragment.ShopDetailFragment"
+        android:label="shop_detail_fragment"
+        tools:layout="@layout/fragment_shop_detail">
+
+        <action
+            android:id="@+id/action_go_to_cart_page"
+            app:destination="@id/cart_fragment"
+            app:popUpTo="@id/cart_fragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/cart_fragment"
+        android:name="com.idisfkj.androidapianalysis.navigation.fragment.CartFragment"
+        android:label="cart_fragment"
+        tools:layout="@layout/fragment_cart">
+
+        <action
+            android:id="@+id/action_go_to_shop_detail_page_from_cart"
+            app:destination="@id/shop_detail_fragment" />
+
+        <action
+            android:id="@+id/action_go_to_shop_list_page_from_cart"
+            app:popUpTo="@id/shop_list_fragment" />
+
+        <action
+            android:id="@+id/action_go_to_order_list_page"
+            app:destination="@id/order_list_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/order_list_fragment"
+        android:name="com.idisfkj.androidapianalysis.navigation.fragment.OrderListFragment"
+        android:label="order_list_fragment"
+        tools:layout="@layout/fragment_order_list">
+
+        <action
+            android:id="@+id/action_go_to_shop_detail_page_from_order"
+            app:destination="@id/shop_detail_fragment" />
+
+    </fragment>
+
+</navigation>
