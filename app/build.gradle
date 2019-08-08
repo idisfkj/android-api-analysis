@@ -134,6 +134,7 @@ dependencies {
     implementation Dependencies.constraint_layout
     // kotlin
     implementation Dependencies.kotlin_stdlib
+    implementation Dependencies.core_ktx
     // architecture component
     implementation Dependencies.arch_lifecycle
     implementation Dependencies.arch_viewmodel
@@ -147,8 +148,6 @@ dependencies {
     // navigation
     implementation Dependencies.nav_fragment
     implementation Dependencies.nav_ui
-    // anko
-    implementation Dependencies.anko
     // rxjava
     implementation Dependencies.rxjava2
     implementation Dependencies.rx_android
