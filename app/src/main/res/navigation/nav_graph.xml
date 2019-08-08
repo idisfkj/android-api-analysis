@@ -13,11 +13,19 @@
 
         <action
             android:id="@+id/action_go_to_register_page"
-            app:destination="@id/register_fragment" />
+            app:destination="@id/register_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
         <action
             android:id="@+id/action_go_to_order_list_page"
-            app:destination="@id/order_list_fragment" />
+            app:destination="@id/order_list_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
 
@@ -29,7 +37,11 @@
 
         <action
             android:id="@+id/action_go_to_shop_list_page"
-            app:destination="@id/shop_list_fragment" />
+            app:destination="@id/shop_list_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
 
@@ -41,7 +53,11 @@
 
         <action
             android:id="@+id/action_go_to_shop_detail_page"
-            app:destination="@id/shop_detail_fragment" />
+            app:destination="@id/shop_detail_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
 
@@ -54,6 +70,10 @@
         <action
             android:id="@+id/action_go_to_cart_page"
             app:destination="@id/cart_fragment"
+            app:enterAnim="@anim/scale_in"
+            app:exitAnim="@anim/scale_out"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/cart_fragment"
             app:popUpToInclusive="true" />
 
@@ -67,15 +87,27 @@
 
         <action
             android:id="@+id/action_go_to_shop_detail_page_from_cart"
-            app:destination="@id/shop_detail_fragment" />
+            app:destination="@id/shop_detail_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
         <action
             android:id="@+id/action_go_to_shop_list_page_from_cart"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/shop_list_fragment" />
 
         <action
             android:id="@+id/action_go_to_order_list_page"
-            app:destination="@id/order_list_fragment" />
+            app:destination="@id/order_list_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
 
@@ -87,7 +119,11 @@
 
         <action
             android:id="@+id/action_go_to_shop_detail_page_from_order"
-            app:destination="@id/shop_detail_fragment" />
+            app:destination="@id/shop_detail_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
 
