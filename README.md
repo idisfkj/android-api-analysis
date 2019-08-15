@@ -53,7 +53,7 @@ Branch: `feat_paging_dev`
 
 Branch: `feat_work_manager_dev`
 
-[WorkManager从入门到实践，有这一篇就够了](https://www.rousetime.com/2019/08/12/WorkManager%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5%EF%BC%8C%E6%9C%89%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86/)
+[WorkManager从入门到实践，有这一篇就够了](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484164&idx=1&sn=8e1cf325a281340d5664a1826b870e34&chksm=e8e0fa94df977382ec38fba3440723cc12d76a44d2f6e3b4ef59d0228aa21a98a25a6b0d2ac9&token=1929195340&lang=zh_CN#rd)
 
 ### Android Annotation Processing
 Branch: `feat_annotation_processing`
