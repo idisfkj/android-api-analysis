@@ -17,9 +17,7 @@ class RegisterFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_register, container, false).apply {
-            register_bt.setOnClickListener {
-                Navigation.findNavController(this).navigate(R.id.action_go_to_shop_list_page)
-            }
+            register_bt.setOnClickListener(Navigation.createNavigateOnClickListener(RegisterFragmentDirections.actionGoToShopListPage()))
         }
     }
 }

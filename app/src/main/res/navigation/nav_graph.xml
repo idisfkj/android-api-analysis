@@ -43,6 +43,8 @@
             app:popEnterAnim="@anim/slide_out_left"
             app:popExitAnim="@anim/slide_out_right" />
 
+        <deepLink app:uri="api://register/" />
+
     </fragment>
 
     <fragment
@@ -57,7 +59,13 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_in_left"
             app:popEnterAnim="@anim/slide_out_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:popExitAnim="@anim/slide_out_right">
+
+            <argument
+                android:name="title"
+                app:argType="string" />
+
+        </action>
 
     </fragment>
 
@@ -77,6 +85,10 @@
             app:popUpTo="@id/cart_fragment"
             app:popUpToInclusive="true" />
 
+        <argument
+            android:name="title"
+            app:argType="string" />
+
     </fragment>
 
     <fragment
@@ -91,7 +103,13 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_in_left"
             app:popEnterAnim="@anim/slide_out_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:popExitAnim="@anim/slide_out_right">
+
+            <argument
+                android:name="title"
+                app:argType="string" />
+
+        </action>
 
         <action
             android:id="@+id/action_go_to_shop_list_page_from_cart"
@@ -123,7 +141,13 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_in_left"
             app:popEnterAnim="@anim/slide_out_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:popExitAnim="@anim/slide_out_right" >
+
+            <argument
+                android:name="title"
+                app:argType="string" />
+
+        </action>
 
     </fragment>
 

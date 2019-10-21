@@ -6,12 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.idisfkj.androidapianalysis.R
-import com.idisfkj.androidapianalysis.navigation.Constants
 import com.idisfkj.androidapianalysis.utils.LogUtils
 import kotlinx.android.synthetic.main.fragment_order_list.view.*
 
@@ -59,13 +57,7 @@ class OrderListFragment : Fragment() {
             override fun onBindViewHolder(holder: ViewHolder, position: Int) {
                 holder.item.findViewById<TextView>(R.id.title_view).text = shopList[position]
                 holder.item.findViewById<TextView>(R.id.shop_status).visibility = View.VISIBLE
-                holder.item.setOnClickListener {
-                    val bundle = bundleOf(Constants.EXTRA_TITLE to shopList[position])
-
-                    Navigation.findNavController(holder.item).navigate(
-                            R.id.action_go_to_shop_detail_page_from_order,
-                            bundle)
-                }
+                holder.item.setOnClickListener(Navigation.createNavigateOnClickListener(OrderListFragmentDirections.actionGoToShopDetailPageFromOrder(shopList[position])))
             }
 
             override fun getItemCount() = shopList.size

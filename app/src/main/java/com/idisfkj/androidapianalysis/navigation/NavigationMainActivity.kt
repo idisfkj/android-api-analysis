@@ -3,6 +3,7 @@ package com.idisfkj.androidapianalysis.navigation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.idisfkj.androidapianalysis.MainModel
+import com.idisfkj.androidapianalysis.R
 import com.idisfkj.androidapianalysis.utils.ActivityUtils
 
 /**
@@ -14,9 +15,10 @@ class NavigationMainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val extraData = getExtraData()
-        setContentView(extraData.layoutId)
-        title = extraData.title
+//        val extraData = getExtraData()
+//        setContentView(extraData.layoutId)
+//        title = extraData.title
+        setContentView(R.layout.activity_navigation_main)
     }
 
     private fun getExtraData(): MainModel =

@@ -5,12 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.idisfkj.androidapianalysis.R
-import com.idisfkj.androidapianalysis.navigation.Constants
 import kotlinx.android.synthetic.main.fragment_cart.view.*
 
 /**
@@ -21,12 +19,8 @@ class CartFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_cart, container, false).apply {
-            shop_detail_bt.setOnClickListener {
-                Navigation.findNavController(this).navigate(R.id.action_go_to_shop_list_page_from_cart)
-            }
-            buy_bt.setOnClickListener {
-                Navigation.findNavController(this).navigate(R.id.action_go_to_order_list_page)
-            }
+            shop_detail_bt.setOnClickListener(Navigation.createNavigateOnClickListener(CartFragmentDirections.actionGoToShopListPageFromCart()))
+            buy_bt.setOnClickListener(Navigation.createNavigateOnClickListener(CartFragmentDirections.actionGoToOrderListPage()))
             recycler_view.adapter = MyAdapter(arrayOf(
                     "Adidas 四叶草", "2019 Mac Book Pro", "杜蕾斯 90周年全球独售"
             ))
@@ -51,13 +45,7 @@ class CartFragment : Fragment() {
             override fun onBindViewHolder(holder: ViewHolder, position: Int) {
                 holder.item.findViewById<TextView>(R.id.title_view).text = shopList[position]
 
-                holder.item.setOnClickListener {
-                    val bundle = bundleOf(Constants.EXTRA_TITLE to shopList[position])
-
-                    Navigation.findNavController(holder.item).navigate(
-                            R.id.action_go_to_shop_detail_page_from_cart,
-                            bundle)
-                }
+                holder.item.setOnClickListener(Navigation.createNavigateOnClickListener(CartFragmentDirections.actionGoToShopDetailPageFromCart(shopList[position])))
             }
 
             override fun getItemCount() = shopList.size

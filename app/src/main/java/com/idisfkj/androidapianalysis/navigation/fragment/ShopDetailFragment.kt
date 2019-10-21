@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import com.idisfkj.androidapianalysis.R
-import com.idisfkj.androidapianalysis.navigation.Constants
 import kotlinx.android.synthetic.main.fragment_shop_detail.view.*
 
 /**
@@ -16,12 +16,12 @@ import kotlinx.android.synthetic.main.fragment_shop_detail.view.*
  */
 class ShopDetailFragment : Fragment() {
 
+    private val args by navArgs<ShopDetailFragmentArgs>()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_shop_detail, container, false).apply {
-            title.text = arguments?.getString(Constants.EXTRA_TITLE)
-            add_cart.setOnClickListener {
-                Navigation.findNavController(this).navigate(R.id.action_go_to_cart_page)
-            }
+            title.text = args.title
+            add_cart.setOnClickListener(Navigation.createNavigateOnClickListener(ShopDetailFragmentDirections.actionGoToCartPage()))
         }
     }
 
