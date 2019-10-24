@@ -7,14 +7,6 @@
 
 > 使用前请先切换到对应的分支
 
-## Doing
-
-在Android Architecture Components刚出来时，我就进行了研究，也写了一系列相关文章。
-
-最近一段时间该组件又发布了其它的新内容，所以接下来会对Android Architecture Components系列进行完善。
-
-接下来是Navigation相关的内容，敬请期待！
-
 ### Databinding Plugin
 
 [只需三步实现Databinding插件化](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247483993&idx=1&sn=1c6d7a776a6f8bdc0ce9786fb0087c46&chksm=e8e0fbc9df9772dfdeef5f174e9325010445ac117d5042ea06a81fb3d38d2c597667047c9e46&token=1514380520&lang=zh_CN#rd)
@@ -54,6 +46,10 @@ Branch: `feat_paging_dev`
 Branch: `feat_work_manager_dev`
 
 [WorkManager从入门到实践，有这一篇就够了](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484164&idx=1&sn=8e1cf325a281340d5664a1826b870e34&chksm=e8e0fa94df977382ec38fba3440723cc12d76a44d2f6e3b4ef59d0228aa21a98a25a6b0d2ac9&token=1929195340&lang=zh_CN#rd)
+
+Branch: `feat_navigation_dev`
+
+[Android Navigation的四大要点你都知道吗？](http://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=100000550&idx=1&sn=732fdf94aa0814a67d0af0a9ef4e1a89&chksm=68e0fab65f9773a0bffd61646784c92d6529696a4b91b205a1e82136c69c0bffb97dee798d52#rd)
 
 ### Android Annotation Processing
 Branch: `feat_annotation_processing`
