@@ -49,7 +49,7 @@ Branch: `feat_work_manager_dev`
 
 Branch: `feat_navigation_dev`
 
-[Android Navigation的四大要点你都知道吗？](http://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=100000550&idx=1&sn=732fdf94aa0814a67d0af0a9ef4e1a89&chksm=68e0fab65f9773a0bffd61646784c92d6529696a4b91b205a1e82136c69c0bffb97dee798d52#rd)
+[Android Navigation的四大要点你都知道吗？](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484199&idx=1&sn=5fbe55f36aaeee4e098b85ec694a4ce5&chksm=e8e0fab7df9773a19b73a53c190b1d213f24521a2db20b551040c314c4e2298fa2936c7bd2f2&token=407594993&lang=zh_CN#rd)
 
 ### Android Annotation Processing
 Branch: `feat_annotation_processing`
