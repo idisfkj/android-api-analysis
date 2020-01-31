@@ -7,6 +7,12 @@
 
 > 使用前请先切换到对应的分支
 
+### 组件化
+
+[AwesomeGithub](https://github.com/idisfkj/AwesomeGithub)
+
+[AwesomeGithub组件化探索之旅](https://www.rousetime.com/2020/01/03/AwesomeGithub%E7%BB%84%E4%BB%B6%E5%8C%96%E6%8E%A2%E7%B4%A2%E4%B9%8B%E6%97%85/)
+
 ### Databinding Plugin
 
 [只需三步实现Databinding插件化](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247483993&idx=1&sn=1c6d7a776a6f8bdc0ce9786fb0087c46&chksm=e8e0fbc9df9772dfdeef5f174e9325010445ac117d5042ea06a81fb3d38d2c597667047c9e46&token=1514380520&lang=zh_CN#rd)
