@@ -7,7 +7,13 @@
 
 > 使用前请先切换到对应的分支
 
+### Flutter
+Flutter Github客户端，同时支持Android与IOS，支持账户密码与认证登陆。使用dart语言进行开发，项目架构是基于Model/State/ViewModel的MSVM；使用Navigator进行页面的跳转；网络框架使用了dio。项目持续更新中...
+
+[Flutter Github](https://github.com/idisfkj/flutter_github)
+
 ### 组件化
+Android Github客户端，基于组件化开发，支持账户密码与认证登陆。使用Kotlin语言进行开发，项目架构是基于JetPack&DataBinding的MVVM；同时支持组件开发，使用Arouter进行组件间的跳转；网络框架使用了Retrofit&Coroutine。项目持续更新中...
 
 [AwesomeGithub](https://github.com/idisfkj/AwesomeGithub)
 
