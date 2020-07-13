@@ -24,7 +24,7 @@ abstract class BaseDevActivity<V : ViewDataBinding, M : ViewModel> : AppCompatAc
         val extraData = getExtraData()
         viewBinding = DataBindingUtil.setContentView(this, getExtraData().layoutId)
         vm = ViewModelProviders.of(this).get(getViewModelClass())
-        viewBinding.setVariable(BR.vm, vm)
+//        viewBinding.setVariable(BR.vm, vm)
         viewBinding.lifecycleOwner = this
         title = extraData.title
     }
