@@ -7,6 +7,11 @@
 
 > 使用前请先切换到对应的分支
 
+### App Startup
+Branch: `feat_app_setup`
+
+> 进阶版[android-startup](https://github.com/idisfkj/android-startup)支持同步与异步初始化，异步支持主线程等待，内部使用拓扑排序优化组件初始化顺序。
+
 ### Flutter
 Flutter Github客户端，同时支持Android与IOS，支持账户密码与认证登陆。使用dart语言进行开发，项目架构是基于Model/State/ViewModel的MSVM；使用Navigator进行页面的跳转；网络框架使用了dio。项目持续更新中...
 
