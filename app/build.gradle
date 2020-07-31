@@ -162,6 +162,9 @@ dependencies {
     implementation Dependencies.glide_runtime
     kapt Dependencies.glide_compiler
 
+    // app setup
+    implementation Dependencies.app_setup
+
     testImplementation Dependencies.junit
     androidTestImplementation Dependencies.runner
     androidTestImplementation Dependencies.espresso_core

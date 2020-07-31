@@ -28,6 +28,7 @@ object Versions {
     const val work_version = "2.1.0"
     const val nav_version = "2.1.0-beta02"
     const val core_ktx = "1.0.0"
+    const val app_setup = "1.0.0-alpha01"
 }
 
 object Dependencies {
@@ -62,6 +63,7 @@ object Dependencies {
     const val nav_ui = "androidx.navigation:navigation-ui-ktx:${Versions.nav_version}"
     const val nav_safe_args_plugin = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.nav_version}"
     const val core_ktx = "androidx.core:core-ktx:${Versions.core_ktx}"
+    const val app_setup = "androidx.startup:startup-runtime:${Versions.app_setup}"
 
     val addRepos: (handler: RepositoryHandler) -> Unit = {
         it.google()
