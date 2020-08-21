@@ -68,6 +68,10 @@ Branch: `feat_navigation_dev`
 
 [Android Navigation的四大要点你都知道吗？](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484199&idx=1&sn=5fbe55f36aaeee4e098b85ec694a4ce5&chksm=e8e0fab7df9773a19b73a53c190b1d213f24521a2db20b551040c314c4e2298fa2936c7bd2f2&token=407594993&lang=zh_CN#rd)
 
+Branch: [AwesomeGithub feat_hilt](https://github.com/idisfkj/AwesomeGithub/tree/feat_hilt)
+
+[Android Hilt实战初体验: Dagger替换成Hilt](https://juejin.im/post/6850418118289227783)
+
 ### Android Annotation Processing
 Branch: `feat_annotation_processing`
 
