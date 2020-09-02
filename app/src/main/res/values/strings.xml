@@ -5,4 +5,6 @@
     <string name="relative_article">相关文章</string>
     <string name="other_tv2">tv2 我的宽度为wrap_content，所以我需要设置 app:layout_constrainedWidth=true，否则我与tv1的约束将失效，从而覆盖tv1</string>
     <string name="barrier_tv3">tv3，位于tv1与tv2的右侧，哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩哔哩</string>
+    <string name="statistic_button">statistic button</string>
+    <string name="statistic_text">statistic text</string>
 </resources>
