@@ -7,6 +7,10 @@
 
 > 使用前请先切换到对应的分支
 
+## Doing
+
+*Retrofit动态代理分析与实战*
+
 ### App Startup
 Branch: `feat_app_setup`
 
