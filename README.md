@@ -9,6 +9,8 @@
 
 ## Doing
 
+[重温Retrofit源码，笑看协程实现](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484584&idx=1&sn=14deb55b443975eec648602a8807862e&chksm=e8e0fd38df97742e45daa2cba014bbbde2216212452c72a00e94e100c13d90d2af5d3fa9ed61&token=981517486&lang=zh_CN#rd)
+
 *Retrofit动态代理分析与实战*
 
 ### App Startup
