@@ -7,12 +7,6 @@
 
 > 使用前请先切换到对应的分支
 
-## Doing
-
-[重温Retrofit源码，笑看协程实现](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484584&idx=1&sn=14deb55b443975eec648602a8807862e&chksm=e8e0fd38df97742e45daa2cba014bbbde2216212452c72a00e94e100c13d90d2af5d3fa9ed61&token=981517486&lang=zh_CN#rd)
-
-*Retrofit动态代理分析与实战*
-
 ### App Startup
 Branch: `feat_app_setup`
 
@@ -35,6 +29,13 @@ Android Github客户端，基于组件化开发，支持账户密码与认证登
 [只需三步实现Databinding插件化](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247483993&idx=1&sn=1c6d7a776a6f8bdc0ce9786fb0087c46&chksm=e8e0fbc9df9772dfdeef5f174e9325010445ac117d5042ea06a81fb3d38d2c597667047c9e46&token=1514380520&lang=zh_CN#rd)
 
 > 由于这是一个小工具，所以我将它独立于另一个[仓库](https://github.com/idisfkj/databinding_autorun)
+
+### Retrofit
+Branch: `feat_proxy_dev`
+
+[重温Retrofit源码，笑看协程实现](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484584&idx=1&sn=14deb55b443975eec648602a8807862e&chksm=e8e0fd38df97742e45daa2cba014bbbde2216212452c72a00e94e100c13d90d2af5d3fa9ed61&token=981517486&lang=zh_CN#rd)
+
+[动态代理分析与仿Retrofit实践](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484600&idx=1&sn=d0b0546d81aa28ba82d65f3451a01595&chksm=e8e0fd28df97743ef4e998d2ceda9d4358360c398c4d090827cfda165dadf8369ed20580e473&token=1120954802&lang=zh_CN#rd)
 
 ### Kotlin Coroutine
 Branch: `feat_coroutine_dev`
