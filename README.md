@@ -42,6 +42,14 @@ Branch: `feat_coroutine_dev`
 
 [What? 你还不知道Kotlin Coroutine?](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247483860&idx=1&sn=d8a4441912d0d1eee189d97506bb4689&chksm=e8e0f844df977152652d69a3b4cc3cd1d1a148609f4295b6142e6d577156b76905e1cb6b95be&token=1091218095&lang=zh_CN#rd)
 
+[Kotlin协程实现原理:Suspend&CoroutineContext](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484630&idx=1&sn=967175b88ce6d57e25917b4763601776&chksm=e8e0fd46df9774500d1446410e6e04cde88fc40f27a95e9d059ca60cbdf5dc4099dc86ed4dc0&token=1520540464&lang=zh_CN&scene=21#wechat_redirect)
+
+[Kotlin协程实现原理:CoroutineScope&Job](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484642&idx=1&sn=3d628b5094d05f0ea6fcb9559dcf73e4&chksm=e8e0fd72df9774642d35efac6dac966ec1c7b25ea561fa686bdc8a08e672bea701e868d27d15&token=1604035346&lang=zh_CN&scene=21#wechat_redirect)
+
+[Kotlin协程实现原理:ContinuationInterceptor&CoroutineDispatcher](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484655&idx=1&sn=36fe3d4a0018b9b633e7aab0f00236a6&chksm=e8e0fd7fdf977469c04c5624acbecc561f167aeaf434ca29d47beb69d9737a771ceb81424c8d&token=1580936770&lang=zh_CN&scene=21#wechat_redirect)
+
+[Kotlin协程实现原理:挂起与恢复](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484696&idx=1&sn=069edb2b12c621cde1a36decc4491e5a&chksm=e8e0fc88df97759ef3d729a9a575a14411bb4062945552692263b37550bc7d51799fa7721029&token=1855541850&lang=zh_CN#rd)
+
 ### Bitmap的图片压缩相关
 Branch: `feat_bitmap_dev`
 
