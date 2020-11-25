@@ -7,7 +7,7 @@ import java.net.URI
  */
 object Versions {
     const val support = "28.0.0"
-    const val kotlin = "1.3.31"
+    const val kotlin = "1.3.50"
     const val constraint_layout = "1.1.0-beta6"
     const val runner = "1.0.1"
     const val espresso_core = "3.0.1"
