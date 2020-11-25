@@ -28,7 +28,7 @@ object Versions {
     const val work_version = "2.1.0"
     const val nav_version = "2.1.0-beta02"
     const val core_ktx = "1.0.0"
-    const val data_store_version = "1.0.0-alpha04"
+    const val data_store_version = "1.0.0-alpha01"
 }
 
 object Dependencies {
