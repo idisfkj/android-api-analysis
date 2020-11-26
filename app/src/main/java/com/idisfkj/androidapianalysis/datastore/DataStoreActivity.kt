@@ -4,18 +4,23 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.datastore.Serializer
+import androidx.datastore.createDataStore
 import androidx.datastore.preferences.createDataStore
 import androidx.datastore.preferences.edit
 import androidx.datastore.preferences.preferencesKey
 import androidx.lifecycle.lifecycleScope
 import com.idisfkj.androidapianalysis.MainModel
 import com.idisfkj.androidapianalysis.R
+import com.idisfkj.androidapianalysis.proto.Settings
 import com.idisfkj.androidapianalysis.utils.ActivityUtils
 import com.idisfkj.androidapianalysis.utils.LogUtils
 import kotlinx.android.synthetic.main.activity_data_store_layout.*
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+import java.io.InputStream
+import java.io.OutputStream
 
 /**
  * Created by idisfkj on 2020/11/25.
@@ -35,6 +40,20 @@ class DataStoreActivity : AppCompatActivity(), View.OnClickListener {
 
     private val dataStore = createDataStore("settings")
 
+    object SettingsSerializer : Serializer<Settings> {
+
+        override fun readFrom(input: InputStream): Settings {
+            return Settings.parseFrom(input)
+        }
+
+        override fun writeTo(t: Settings, output: OutputStream) {
+            t.writeTo(output)
+        }
+
+    }
+
+    private val dataStoreProto = createDataStore("settings.pb", SettingsSerializer)
+
     companion object {
         val DATA_KEY = preferencesKey<String>("key_name")
         val DATA_KEY_INT = preferencesKey<Int>("key_name")
@@ -49,14 +68,29 @@ class DataStoreActivity : AppCompatActivity(), View.OnClickListener {
 
     private suspend fun read() {
         dataStore.data.map {
+            // unSafe type
             if (it[DATA_KEY] is String) {
                 it[DATA_KEY] ?: ""
             } else {
-                // unSafe
                 "type is String: ${it[DATA_KEY] is String}"
             }
         }.collect {
             Toast.makeText(this@DataStoreActivity, "read result success: $it", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private suspend fun protoWrite(value: String) {
+        dataStoreProto.updateData {
+            it.toBuilder().setKeyName(value).build()
+        }
+    }
+
+    private suspend fun protoRead() {
+        dataStoreProto.data.map {
+            // safe type
+            it.keyName
+        }.collect {
+            Toast.makeText(this, "read result success form proto: $it", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -74,6 +108,14 @@ class DataStoreActivity : AppCompatActivity(), View.OnClickListener {
                         it[DATA_KEY_INT] = -1
                     }
                 }
+            }
+            R.id.write_proto -> {
+                lifecycleScope.launch {
+                    protoWrite(edit_proto.text.toString())
+                }
+            }
+            R.id.read_proto -> {
+                lifecycleScope.launch { protoRead() }
             }
         }
     }

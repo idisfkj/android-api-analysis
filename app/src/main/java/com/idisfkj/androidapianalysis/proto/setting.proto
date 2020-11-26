@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+message Settings {
+    string key_name = 1;
+}

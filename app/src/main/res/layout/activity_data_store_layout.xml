@@ -48,4 +48,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/read" />
 
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_proto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/write"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/write_int" />
+
+    <Button
+        android:id="@+id/write_proto"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:onClick="onClick"
+        android:text="write to proto"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_proto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/edit_proto"
+        app:layout_constraintTop_toTopOf="@+id/edit_proto" />
+
+    <Button
+        android:id="@+id/read_proto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="onClick"
+        android:text="read from proto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_proto" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
