@@ -13,11 +13,9 @@ import com.idisfkj.androidapianalysis.R
 import com.idisfkj.androidapianalysis.utils.ActivityUtils
 import com.idisfkj.androidapianalysis.utils.LogUtils
 import kotlinx.android.synthetic.main.activity_data_store_layout.*
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 /**
  * Created by idisfkj on 2020/11/25.
@@ -38,7 +36,8 @@ class DataStoreActivity : AppCompatActivity(), View.OnClickListener {
     private val dataStore = createDataStore("settings")
 
     companion object {
-        val DATA_KEY = preferencesKey<String>("test")
+        val DATA_KEY = preferencesKey<String>("key_name")
+        val DATA_KEY_INT = preferencesKey<Int>("key_name")
     }
 
     private suspend fun write(value: String) {
@@ -50,17 +49,32 @@ class DataStoreActivity : AppCompatActivity(), View.OnClickListener {
 
     private suspend fun read() {
         dataStore.data.map {
-            it[DATA_KEY] ?: ""
+            if (it[DATA_KEY] is String) {
+                it[DATA_KEY] ?: ""
+            } else {
+                // unSafe
+                "type is String: ${it[DATA_KEY] is String}"
+            }
         }.collect {
             Toast.makeText(this@DataStoreActivity, "read result success: $it", Toast.LENGTH_LONG).show()
         }
     }
 
     override fun onClick(v: View?) {
-        if (v?.id == R.id.write) {
-            lifecycleScope.launch { write(edit.text.toString()) }
-        } else if (v?.id == R.id.read) {
-            lifecycleScope.launch { read() }
+        when (v?.id) {
+            R.id.write -> {
+                lifecycleScope.launch { write(edit.text.toString()) }
+            }
+            R.id.read -> {
+                lifecycleScope.launch { read() }
+            }
+            R.id.write_int -> {
+                lifecycleScope.launch {
+                    dataStore.edit {
+                        it[DATA_KEY_INT] = -1
+                    }
+                }
+            }
         }
     }
 }
