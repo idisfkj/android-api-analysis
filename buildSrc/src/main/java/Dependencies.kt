@@ -63,7 +63,8 @@ object Dependencies {
     const val nav_ui = "androidx.navigation:navigation-ui-ktx:${Versions.nav_version}"
     const val nav_safe_args_plugin = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.nav_version}"
     const val core_ktx = "androidx.core:core-ktx:${Versions.core_ktx}"
-    const val data_store = "androidx.datastore:datastore-preferences:${Versions.data_store_version}"
+    const val data_store_preferences = "androidx.datastore:datastore-preferences:${Versions.data_store_version}"
+    const val data_store_proto = "androidx.datastore:datastore-core:${Versions.data_store_version}"
 
     val addRepos: (handler: RepositoryHandler) -> Unit = {
         it.google()

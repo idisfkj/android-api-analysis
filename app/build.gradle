@@ -147,7 +147,8 @@ dependencies {
     implementation Dependencies.paging_runtime
     implementation Dependencies.work_runtime
     kapt Dependencies.arch_room_compiler
-    implementation Dependencies.data_store
+    implementation Dependencies.data_store_preferences
+    implementation Dependencies.data_store_proto
     // navigation
     implementation Dependencies.nav_fragment
     implementation Dependencies.nav_ui
