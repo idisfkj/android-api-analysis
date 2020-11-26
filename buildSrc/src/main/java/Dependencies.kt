@@ -29,6 +29,7 @@ object Versions {
     const val nav_version = "2.1.0-beta02"
     const val core_ktx = "1.0.0"
     const val data_store_version = "1.0.0-alpha01"
+    const val proto_buf_version = "3.9.1"
 }
 
 object Dependencies {
@@ -65,6 +66,7 @@ object Dependencies {
     const val core_ktx = "androidx.core:core-ktx:${Versions.core_ktx}"
     const val data_store_preferences = "androidx.datastore:datastore-preferences:${Versions.data_store_version}"
     const val data_store_proto = "androidx.datastore:datastore-core:${Versions.data_store_version}"
+    const val proto_buf = "com.google.protobuf:protobuf-javalite:${Versions.proto_buf_version}"
 
     val addRepos: (handler: RepositoryHandler) -> Unit = {
         it.google()

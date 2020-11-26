@@ -163,6 +163,8 @@ dependencies {
     // glide
     implementation Dependencies.glide_runtime
     kapt Dependencies.glide_compiler
+    // proto buf
+    implementation Dependencies.proto_buf
 
     testImplementation Dependencies.junit
     androidTestImplementation Dependencies.runner
