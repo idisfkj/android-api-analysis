@@ -1,11 +1,14 @@
 package com.idisfkj.androidapianalysis.datastore
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.Serializer
 import androidx.datastore.createDataStore
+import androidx.datastore.preferences.SharedPreferencesMigration
 import androidx.datastore.preferences.createDataStore
 import androidx.datastore.preferences.edit
 import androidx.datastore.preferences.preferencesKey
@@ -28,17 +31,21 @@ import java.io.OutputStream
  */
 class DataStoreActivity : AppCompatActivity(), View.OnClickListener {
 
+    private lateinit var sp: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val extraData = getExtraData()
         setContentView(extraData.layoutId)
         title = extraData.title
+        sp = getSharedPreferences("settings_preference", Context.MODE_PRIVATE)
+        sp.edit().putString("key_name_from_sp", "from sp").apply()
     }
 
     private fun getExtraData(): MainModel = intent?.extras?.getParcelable(ActivityUtils.EXTRA_DATA)
             ?: throw NullPointerException("intent or extras is null")
 
-    private val dataStore = createDataStore("settings")
+    private val dataStore = createDataStore("settings", migrations = listOf(SharedPreferencesMigration(this, "settings_preference")))
 
     object SettingsSerializer : Serializer<Settings> {
 
@@ -57,6 +64,7 @@ class DataStoreActivity : AppCompatActivity(), View.OnClickListener {
     companion object {
         val DATA_KEY = preferencesKey<String>("key_name")
         val DATA_KEY_INT = preferencesKey<Int>("key_name")
+        val DATA_KEY_FROM_SP = preferencesKey<String>("key_name_from_sp")
     }
 
     private suspend fun write(value: String) {
@@ -94,6 +102,14 @@ class DataStoreActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    private suspend fun readFromOriginalSP() {
+        dataStore.data.map {
+            it[DATA_KEY_FROM_SP]
+        }.collect {
+            Toast.makeText(this, "read result success form original sp: $it", Toast.LENGTH_LONG).show()
+        }
+    }
+
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.write -> {
@@ -116,6 +132,9 @@ class DataStoreActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.read_proto -> {
                 lifecycleScope.launch { protoRead() }
+            }
+            R.id.read_from_sp -> {
+                lifecycleScope.launch { readFromOriginalSP() }
             }
         }
     }
