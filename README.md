@@ -17,6 +17,18 @@ Flutter Github客户端，同时支持Android与IOS，支持账户密码与认�
 
 [Flutter Github](https://github.com/idisfkj/flutter_github)
 
+### Android源码分析
+
+[Android init 启动](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484889&idx=1&sn=b39c8bc0a9925464022b77a341263cf0&chksm=e8e0fc49df97755f598ef0082409c573d7715ce33bb27b1c98194410d487ae69adbeb2293d84&token=1353481402&lang=zh_CN#rd)
+
+[Android Linux Zygote启动](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484903&idx=1&sn=b55b5bd01ad292256364ecd965ca2288&chksm=e8e0fc77df9775611d5d537f7388daaf7e1a8176667d23e3a6883d448d3a264c761dfc639ba9&token=757375240&lang=zh_CN#rd)
+
+[Android Java Zygote启动](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484921&idx=1&sn=bf7251253d23c17c9148423f6f1e386e&chksm=e8e0fc69df97757f2aec459954c07d0fc44be4bd6c6963dab2b5c5b01d8e8176c9069ddab12c&token=757375240&lang=zh_CN#rd)
+
+[Android SystemServer启动(一)](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484938&idx=1&sn=027a7eb6902d8668d15008db0e2ac29a&chksm=e8e0ff9adf97768cb5f77f6b1ffbb2e306a1ac6dea66a4aeeed0a7aed3c3ccb531db634df991&token=757375240&lang=zh_CN#rd)
+
+[Android SystemServer启动(二)](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247484991&idx=1&sn=7a4701c30ade3569c75591a12644c4f3&chksm=e8e0ffafdf9776b9a00e9b912a47578622379e667e45a16f5d814b638e8ab04786e38403542b&token=694410729&lang=zh_CN#rd)
+
 ### 组件化
 Android Github客户端，基于组件化开发，支持账户密码与认证登陆。使用Kotlin语言进行开发，项目架构是基于JetPack&DataBinding的MVVM；同时支持组件开发，使用Arouter进行组件间的跳转；网络框架使用了Retrofit&Coroutine。项目持续更新中...
 
