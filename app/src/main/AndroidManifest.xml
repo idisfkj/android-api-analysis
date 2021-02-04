@@ -27,6 +27,10 @@
         <activity android:name=".paint.PaintActivity" />
         <activity android:name=".paint.PaintCodeAnalysisActivity" />
         <activity android:name=".binder.BinderActivity" />
+
+        <service
+            android:name=".binder.server.RemoteService"
+            android:process=":remote" />
     </application>
 
 </manifest>
