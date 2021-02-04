@@ -26,6 +26,7 @@
         <activity android:name=".constraintlayout.ConstraintLayoutItemActivity" />
         <activity android:name=".paint.PaintActivity" />
         <activity android:name=".paint.PaintCodeAnalysisActivity" />
+        <activity android:name=".binder.BinderActivity" />
     </application>
 
 </manifest>
