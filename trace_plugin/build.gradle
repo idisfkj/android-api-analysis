@@ -1,0 +1,28 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation Dependencies.gradle_plugin
+}
+
+repositories {
+    mavenCentral()
+}
+
+def groupId = 'com.rousetime.trace_plugin'
+def version = '1.0.0'
+def artifactId = 'tracePlugin'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            pom.groupId = groupId
+            pom.artifactId = artifactId
+            pom.version = version
+            repository(url: uri('../repos'))
+        }
+    }
+}
