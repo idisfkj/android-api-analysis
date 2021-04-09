@@ -31,13 +31,14 @@ object JarFileUtils {
 
             val entryName = jarEntry.name
             // 构建zipEntry
-            val zipEntry = ZipEntry(jarEntry)
+            val zipEntry = ZipEntry(entryName)
             jarOutputStream.putNextEntry(zipEntry)
 
             var modifyClassByte: ByteArray? = null
             val sourceClassByte = IOUtils.toByteArray(inputStream)
 
             if (entryName.endsWith(".class")) {
+                LogUtils.d("modifyJarFile => $entryName")
                 modifyClassByte = transformProcess.process(entryName, sourceClassByte)
             }
 
@@ -46,7 +47,7 @@ object JarFileUtils {
             } else {
                 jarOutputStream.write(modifyClassByte)
             }
-            inputStream.close()
+//            inputStream.close()
             jarOutputStream.closeEntry()
         }
         jarOutputStream.close()

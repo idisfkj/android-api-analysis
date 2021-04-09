@@ -5,5 +5,5 @@ package com.rousetime.trace_plugin
  */
 interface TransformProcess {
 
-    fun process(entryName: String, sourceClassByte: ByteArray): ByteArray
+    fun process(entryName: String, sourceClassByte: ByteArray): ByteArray?
 }

@@ -8,7 +8,7 @@ apply plugin: 'kotlin-kapt'
 
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
-apply plugin: "trace_plugin"
+apply plugin: 'trace_plugin'
 
 android {
     compileSdkVersion Versions.target_sdk

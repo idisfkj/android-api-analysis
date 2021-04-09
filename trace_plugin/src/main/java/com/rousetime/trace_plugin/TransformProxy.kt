@@ -2,8 +2,10 @@ package com.rousetime.trace_plugin
 
 import com.android.build.api.transform.*
 import com.android.utils.FileUtils
+import com.rousetime.trace_plugin.filter.DefaultClassNameFilter
 import com.rousetime.trace_plugin.utils.ClassUtils
 import com.rousetime.trace_plugin.utils.JarFileUtils
+import com.rousetime.trace_plugin.utils.LogUtils
 import org.apache.commons.codec.digest.DigestUtils
 import org.apache.commons.io.IOUtils
 import java.io.File
@@ -14,14 +16,15 @@ import java.util.concurrent.ForkJoinPool
 /**
  * Created by idisfkj on 4/7/21.
  */
-class TransformProxy(transformInvocation: TransformInvocation?, transformProcess: TransformProcess) : TransformProcess {
+class TransformProxy(transformInvocation: TransformInvocation?, private val transformProcess: TransformProcess) : TransformProcess {
 
     private var inputs: Collection<TransformInput>? = null
     private var outputProvider: TransformOutputProvider? = null
     private var isIncremental: Boolean = false
     private var context: Context? = null
     private var executor: ExecutorService? = null
-    private val tasks = ArrayList<Callable<Unit>>()
+    private val tasks = ArrayList<Callable<Unit?>>()
+    private val filter by lazy { DefaultClassNameFilter() }
 
     init {
         // 获取消费型输入，需要将结果传递给下一个transform
@@ -33,6 +36,9 @@ class TransformProxy(transformInvocation: TransformInvocation?, transformProcess
     }
 
     fun transform() {
+        if (!isIncremental) {
+            outputProvider?.deleteAll()
+        }
         inputs?.forEach {
             // jar
             it.jarInputs.forEach { jarInput ->
@@ -89,7 +95,7 @@ class TransformProxy(transformInvocation: TransformInvocation?, transformProcess
                         val bytes = IOUtils.toByteArray(it.inputStream())
                         val modifyClassByte = process(className ?: "", bytes)
                         // 保存修改的classFile
-                        saveClassFile(modifyClassByte, dest, absolutePath)
+                        modifyClassByte?.let { byte -> saveClassFile(byte, dest, absolutePath) }
                     }
                     tasks.add(task)
                     executor?.submit(task)
@@ -99,9 +105,9 @@ class TransformProxy(transformInvocation: TransformInvocation?, transformProcess
     }
 
     private fun saveClassFile(byteArray: ByteArray, dest: File?, absolutePath: String) {
-        val tempDir = File("/temp")
+        val tempDir = File(dest, "/temp")
         val tempFile = File(tempDir, absolutePath)
-        tempFile.mkdir()
+        tempFile.mkdirs()
         val modifyFile = ClassUtils.saveFile(tempFile, byteArray)
         val targetFile = File(dest, absolutePath)
         if (targetFile.exists()) {
@@ -111,7 +117,11 @@ class TransformProxy(transformInvocation: TransformInvocation?, transformProcess
         tempFile.delete()
     }
 
-    override fun process(entryName: String, sourceClassByte: ByteArray): ByteArray {
-        TODO("Not yet implemented")
+    override fun process(entryName: String, sourceClassByte: ByteArray): ByteArray? {
+        LogUtils.d("process => $entryName")
+        if (!filter.filter(entryName)) {
+            return transformProcess.process(entryName, sourceClassByte)
+        }
+        return null
     }
 }

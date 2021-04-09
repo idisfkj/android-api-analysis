@@ -4,6 +4,8 @@ import com.android.build.api.transform.QualifiedContent
 import com.android.build.api.transform.Transform
 import com.android.build.api.transform.TransformInvocation
 import com.android.build.gradle.internal.pipeline.TransformManager
+import com.rousetime.trace_plugin.delegate.TraceInjectDelegate
+import com.rousetime.trace_plugin.utils.ClassUtils
 
 /**
  * Created by idisfkj on 4/7/21.
@@ -19,10 +21,14 @@ class TraceTransform : Transform() {
     override fun getScopes(): MutableSet<in QualifiedContent.Scope> = TransformManager.SCOPE_FULL_PROJECT
 
     override fun transform(transformInvocation: TransformInvocation?) {
-        super.transform(transformInvocation)
         TransformProxy(transformInvocation, object : TransformProcess {
-            override fun process(entryName: String, sourceClassByte: ByteArray): ByteArray {
-                TODO("Not yet implemented")
+            override fun process(entryName: String, sourceClassByte: ByteArray): ByteArray? {
+                // use ams to inject
+                return if (ClassUtils.checkClassName(entryName)) {
+                    TraceInjectDelegate().inject(sourceClassByte)
+                } else {
+                    null
+                }
             }
         }).apply {
             transform()

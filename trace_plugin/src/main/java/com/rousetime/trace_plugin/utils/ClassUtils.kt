@@ -12,6 +12,11 @@ object ClassUtils {
         return entryName.replace(File.separator, ".").replace(".class", "")
     }
 
+    fun checkClassName(className: String): Boolean {
+        return (!className.contains("R\\$") && !className.endsWith("R")
+                && !className.endsWith("BuildConfig"))
+    }
+
     fun saveFile(mTempDir: File?, modifiedClassBytes: ByteArray?): File? {
         var modified: File? = null
         try {
