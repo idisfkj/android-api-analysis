@@ -13,7 +13,7 @@ class TraceAsmInject : Inject {
         val classWriter = ClassWriter(ClassWriter.COMPUTE_MAXS)
         val classFilterVisitor = ClassFilterVisitor(classWriter)
         val classReader = ClassReader(byteArray)
-        classReader.accept(classFilterVisitor, ClassReader.SKIP_DEBUG)
+        classReader.accept(classFilterVisitor, ClassReader.EXPAND_FRAMES)
         return classWriter.toByteArray()
     }
 

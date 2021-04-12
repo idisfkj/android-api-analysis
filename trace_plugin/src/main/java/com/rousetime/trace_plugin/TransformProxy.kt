@@ -2,6 +2,7 @@ package com.rousetime.trace_plugin
 
 import com.android.build.api.transform.*
 import com.android.utils.FileUtils
+import com.rousetime.trace_plugin.filter.ClassNameFilter
 import com.rousetime.trace_plugin.filter.DefaultClassNameFilter
 import com.rousetime.trace_plugin.utils.ClassUtils
 import com.rousetime.trace_plugin.utils.JarFileUtils
@@ -24,7 +25,7 @@ class TransformProxy(transformInvocation: TransformInvocation?, private val tran
     private var context: Context? = null
     private var executor: ExecutorService? = null
     private val tasks = ArrayList<Callable<Unit?>>()
-    private val filter by lazy { DefaultClassNameFilter() }
+    private val filter: ClassNameFilter by lazy { DefaultClassNameFilter() }
 
     init {
         // 获取消费型输入，需要将结果传递给下一个transform
@@ -113,12 +114,12 @@ class TransformProxy(transformInvocation: TransformInvocation?, private val tran
         if (targetFile.exists()) {
             targetFile.delete()
         }
-        FileUtils.copyDirectory(modifyFile, targetFile)
+        FileUtils.copyFile(modifyFile, targetFile)
         tempFile.delete()
     }
 
     override fun process(entryName: String, sourceClassByte: ByteArray): ByteArray? {
-        LogUtils.d("process => $entryName")
+//        LogUtils.d("process => $entryName")
         if (!filter.filter(entryName)) {
             return transformProcess.process(entryName, sourceClassByte)
         }

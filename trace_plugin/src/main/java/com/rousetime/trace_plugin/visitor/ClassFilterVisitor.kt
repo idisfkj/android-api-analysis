@@ -5,6 +5,7 @@ import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.FieldVisitor
 import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes
+import org.objectweb.asm.commons.AdviceAdapter
 
 /**
  * Created by idisfkj on 4/8/21.
@@ -24,16 +25,14 @@ class ClassFilterVisitor(cv: ClassVisitor?) : ClassVisitor(Opcodes.ASM5, cv) {
         if (mInterface != null && mInterface?.size ?: 0 > 0) {
             mInterface?.forEach {
                 if ((name + desc) == "onClick(Landroid/view/View;)V" && it == "android/view/View\$OnClickListener") {
-                    LogUtils.d("inject => access: $access, name: $name, desc: $desc, signature: $signature, exceptions: $exceptions")
                     val mv = cv.visitMethod(access, name, desc, signature, exceptions)
-                    return object : MethodVisitor(Opcodes.ASM5, mv) {
-                        override fun visitInsn(opcode: Int) {
-                            if ((opcode >= Opcodes.IRETURN && opcode <= Opcodes.RETURN) || opcode == Opcodes.ATHROW) {
-//                                mv.visitFieldInsn(Opcodes.GETSTATIC, "com/idisfkj/androidapianalysis/utils/LogUtils", "INSTANCE", "Lcom/idisfkj/androidapianalysis/utils/LogUtils")
-                                mv.visitLdcInsn("inject success.")
-                                mv.visitMethodInsn(Opcodes.INVOKESTATIC, "com/idisfkj/androidapianalysis/utils/LogUtils", "d", "(Ljava/lang/String;)V", false)
-                            }
-                            mv.visitInsn(opcode)
+                    return object : AdviceAdapter(Opcodes.ASM5, mv, access, name, desc) {
+
+                        override fun onMethodEnter() {
+                            super.onMethodEnter()
+                            mv.visitFieldInsn(GETSTATIC, "com/idisfkj/androidapianalysis/utils/LogUtils", "INSTANCE", "Lcom/idisfkj/androidapianalysis/utils/LogUtils;")
+                            mv.visitLdcInsn("inject success.")
+                            mv.visitMethodInsn(INVOKEVIRTUAL, "com/idisfkj/androidapianalysis/utils/LogUtils", "d", "(Ljava/lang/String;)V", false)
                         }
                     }
                 }

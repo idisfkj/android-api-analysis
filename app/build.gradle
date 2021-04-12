@@ -19,6 +19,7 @@ android {
         targetSdkVersion Versions.target_sdk
         versionCode 1
         versionName "1.0"
+        multiDexEnabled = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
@@ -163,6 +164,8 @@ dependencies {
     // glide
     implementation Dependencies.glide_runtime
     kapt Dependencies.glide_compiler
+    // multi_dx
+    implementation Dependencies.multi_dex
 
     testImplementation Dependencies.junit
     androidTestImplementation Dependencies.runner

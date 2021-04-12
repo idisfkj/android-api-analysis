@@ -7,7 +7,7 @@ import java.net.URI
  */
 object Versions {
     const val support = "28.0.0"
-    const val kotlin = "1.3.31"
+    const val kotlin = "1.3.72"
     const val constraint_layout = "1.1.0-beta6"
     const val runner = "1.0.1"
     const val espresso_core = "3.0.1"
@@ -29,6 +29,7 @@ object Versions {
     const val nav_version = "2.1.0-beta02"
     const val core_ktx = "1.0.0"
     const val trace_plugin = "1.0.0"
+    const val multi_dex = "2.0.1"
 }
 
 object Dependencies {
@@ -64,6 +65,7 @@ object Dependencies {
     const val nav_safe_args_plugin = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.nav_version}"
     const val core_ktx = "androidx.core:core-ktx:${Versions.core_ktx}"
     const val trace_plugin = "com.rousetime.trace_plugin:tracePlugin:${Versions.trace_plugin}"
+    const val multi_dex = "com.android.support:multidex:${Versions.multi_dex}"
 
     val addRepos: (handler: RepositoryHandler) -> Unit = {
         it.google()

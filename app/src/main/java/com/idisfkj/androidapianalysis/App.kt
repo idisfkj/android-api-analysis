@@ -1,7 +1,9 @@
 package com.idisfkj.androidapianalysis
 
 import android.app.Application
+import android.content.Context
 import android.util.Log
+import androidx.multidex.MultiDex
 import androidx.work.Configuration
 
 /**
@@ -15,4 +17,8 @@ class App : Application(), Configuration.Provider {
                     .setMinimumLoggingLevel(Log.DEBUG)
                     .build()
 
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
+    }
 }

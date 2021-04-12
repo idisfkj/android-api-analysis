@@ -6,7 +6,6 @@ object LogUtils {
 
     var DEBUG = true
     var TAG = "android-api-analysis"
-    @JvmStatic
     fun d(msg: String) {
         if (DEBUG) {
             Log.d(TAG, buildMessage(false, msg))

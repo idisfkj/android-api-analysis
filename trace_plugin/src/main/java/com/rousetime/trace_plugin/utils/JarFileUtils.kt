@@ -38,7 +38,7 @@ object JarFileUtils {
             val sourceClassByte = IOUtils.toByteArray(inputStream)
 
             if (entryName.endsWith(".class")) {
-                LogUtils.d("modifyJarFile => $entryName")
+//                LogUtils.d("modifyJarFile => $entryName")
                 modifyClassByte = transformProcess.process(entryName, sourceClassByte)
             }
 
@@ -47,7 +47,7 @@ object JarFileUtils {
             } else {
                 jarOutputStream.write(modifyClassByte)
             }
-//            inputStream.close()
+            inputStream.close()
             jarOutputStream.closeEntry()
         }
         jarOutputStream.close()
