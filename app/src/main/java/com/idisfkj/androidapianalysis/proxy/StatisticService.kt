@@ -12,14 +12,9 @@ import com.idisfkj.androidapianalysis.proxy.statistic.annomation.Scan
 interface StatisticService {
 
     @Scan(ProxyActivity.PAGE_NAME)
-    fun buttonScan(@Content(StatisticTrack.Parameter.NAME) name: String)
+    fun trackScan(@Content(StatisticTrack.Parameter.NAME) name: String)
 
     @Click(ProxyActivity.PAGE_NAME)
-    fun buttonClick(@Content(StatisticTrack.Parameter.NAME) name: String, @Content(StatisticTrack.Parameter.TIME) clickTime: Long)
+    fun trackClick(@Content(StatisticTrack.Parameter.NAME) name: String, @Content(StatisticTrack.Parameter.TIME) clickTime: Long)
 
-    @Scan(ProxyActivity.PAGE_NAME)
-    fun textScan(@Content(StatisticTrack.Parameter.NAME) name: String)
-
-    @Click(ProxyActivity.PAGE_NAME)
-    fun textClick(@Content(StatisticTrack.Parameter.NAME) name: String, @Content(StatisticTrack.Parameter.TIME) clickTime: Long)
 }
