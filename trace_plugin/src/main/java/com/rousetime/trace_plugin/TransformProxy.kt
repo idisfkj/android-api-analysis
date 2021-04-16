@@ -1,15 +1,17 @@
 package com.rousetime.trace_plugin
 
 import com.android.build.api.transform.*
-import com.android.utils.FileUtils
+import com.android.utils.FileUtils.getAllFiles
 import com.rousetime.trace_plugin.filter.ClassNameFilter
 import com.rousetime.trace_plugin.filter.DefaultClassNameFilter
 import com.rousetime.trace_plugin.utils.ClassUtils
 import com.rousetime.trace_plugin.utils.JarFileUtils
 import com.rousetime.trace_plugin.utils.LogUtils
 import org.apache.commons.codec.digest.DigestUtils
+import org.apache.commons.io.FileUtils
 import org.apache.commons.io.IOUtils
 import java.io.File
+import java.io.FileInputStream
 import java.util.concurrent.Callable
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.ForkJoinPool
@@ -30,7 +32,9 @@ class TransformProxy(transformInvocation: TransformInvocation?, private val tran
     init {
         // 获取消费型输入，需要将结果传递给下一个transform
         inputs = transformInvocation?.inputs
+        // 输出目录提供者
         outputProvider = transformInvocation?.outputProvider
+        // 是否增量
         isIncremental = transformInvocation?.isIncremental ?: false
         context = transformInvocation?.context
         executor = ForkJoinPool.commonPool()
@@ -64,7 +68,21 @@ class TransformProxy(transformInvocation: TransformInvocation?, private val tran
         // 输出文件
         val dest = outputProvider?.getContentLocation(destName + "_" + hexName, jarInput.contentTypes, jarInput.scopes, Format.JAR)
         if (isIncremental) { // 增量
-            // todo incremental
+            when (status) {
+                Status.NOTCHANGED -> {
+                    // nothing to do
+                }
+                Status.ADDED, Status.CHANGED -> {
+                    foreachJar(jarInput, dest)
+                }
+                Status.REMOVED -> {
+                    if (dest?.exists() == true) {
+                        FileUtils.forceDelete(dest)
+                    }
+                }
+                else -> {
+                }
+            }
         } else {
             foreachJar(jarInput, dest)
         }
@@ -79,16 +97,50 @@ class TransformProxy(transformInvocation: TransformInvocation?, private val tran
         // 输出文件
         val dest = outputProvider?.getContentLocation(directoryInput.name, directoryInput.contentTypes, directoryInput.scopes, Format.DIRECTORY)
         if (isIncremental) { // 增量
-            // todo incremental
+            val changedFiles = directoryInput.changedFiles
+            val dir = directoryInput.file
+            for ((file, status) in changedFiles) {
+                val destFilePath = file.absolutePath.replace(dir.absolutePath, dest?.absolutePath ?: "")
+                val destFile = File(destFilePath)
+                when (status) {
+                    Status.ADDED, Status.CHANGED -> {
+                        val callable = Callable {
+                            FileUtils.touch(destFile)
+                            modifyFile(dir, file, destFile)
+                        }
+                        tasks.add(callable)
+                        executor?.submit(callable)
+                    }
+                    Status.REMOVED -> {
+                        if (destFile.exists()) {
+                            FileUtils.forceDelete(destFile)
+                        }
+                    }
+                    else -> {
+                    }
+                }
+            }
         } else {
             foreachFile(directoryInput.file, dest)
+        }
+    }
+
+    private fun modifyFile(dir: File, file: File, dest: File?) {
+        val absolutePath = file.absolutePath.replace(dir.absolutePath + File.separator, "")
+        val className = ClassUtils.path2Classname(absolutePath)
+        if (absolutePath.endsWith(".class")) {
+            val byte = IOUtils.toByteArray(FileInputStream(file))
+            val modifyByte = process(className ?: "", byte) ?: byte
+            ClassUtils.saveFile(dest, modifyByte)
+        } else {
+            FileUtils.copyFile(file, dest)
         }
     }
 
     private fun foreachFile(dir: File, dest: File?) {
         if (dir.isDirectory) {
             FileUtils.copyDirectory(dir, dest)
-            FileUtils.getAllFiles(dir).forEach {
+            getAllFiles(dir).forEach {
                 if (it.name.endsWith(".class")) {
                     val task = Callable {
                         val absolutePath = it.absolutePath.replace(dir.absolutePath + File.separator, "")

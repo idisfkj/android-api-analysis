@@ -16,7 +16,7 @@ class TraceTransform : Transform() {
 
     override fun getInputTypes(): MutableSet<QualifiedContent.ContentType> = TransformManager.CONTENT_JARS
 
-    override fun isIncremental(): Boolean = false
+    override fun isIncremental(): Boolean = true
 
     override fun getScopes(): MutableSet<in QualifiedContent.Scope> = TransformManager.SCOPE_FULL_PROJECT
 
