@@ -1,2 +1,2 @@
-include ':trace_plugin'
 include ':app'
+includeBuild("./plugin")

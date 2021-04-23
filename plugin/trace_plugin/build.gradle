@@ -1,11 +1,24 @@
 apply plugin: 'groovy'
 apply plugin: 'maven'
 apply plugin: 'kotlin'
+apply plugin: 'java-gradle-plugin'
 
 dependencies {
     implementation gradleApi()
     implementation localGroovy()
-    implementation Dependencies.gradle_plugin
+    implementation 'com.android.tools.build:gradle:3.4.1'
+//    implementation Dependencies
+}
+
+gradlePlugin {
+    plugins {
+        version {
+            // 在 app 模块需要通过 id 引用这个插件
+            id = 'trace_plugin'
+            // 实现这个插件的类的路径
+            implementationClass = 'com.rousetime.trace_plugin.TracePlugin'
+        }
+    }
 }
 
 repositories {
@@ -22,7 +35,7 @@ uploadArchives {
             pom.groupId = groupId
             pom.artifactId = artifactId
             pom.version = version
-            repository(url: uri('../repos'))
+            repository(url: uri('../../repos'))
         }
     }
 }
