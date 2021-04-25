@@ -10,6 +10,16 @@ apply plugin: "androidx.navigation.safeargs.kotlin"
 
 apply plugin: 'trace_plugin'
 
+methodVisitor {
+    name = 'mehtodVisitorConfig'
+    visitAnnotation { desc, visible ->
+        println 'desc: ' + desc + ' visible: ' + visible
+    }
+    onMethodExit { opcode ->
+        println 'opcode: ' + opcode
+    }
+}
+
 android {
     compileSdkVersion Versions.target_sdk
     buildToolsVersion Versions.build_tools

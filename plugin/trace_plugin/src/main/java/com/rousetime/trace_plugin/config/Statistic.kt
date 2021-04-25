@@ -5,11 +5,13 @@ import jdk.internal.org.objectweb.asm.Opcodes
 /**
  * Created by idisfkj on 4/15/21.
  */
-class Statistic {
+class Statistic private constructor(){
 
     companion object {
         const val OWNER = "com/idisfkj/androidapianalysis/proxy/statistic/Statistic"
         const val DESC = "Lcom/idisfkj/androidapianalysis/proxy/statistic/Statistic;"
+
+        val INSTANCE  = Statistic()
     }
 
     val companion = FieldConfig(

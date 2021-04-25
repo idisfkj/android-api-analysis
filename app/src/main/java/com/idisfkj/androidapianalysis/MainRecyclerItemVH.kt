@@ -8,6 +8,9 @@ import android.content.pm.PackageManager
 import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.idisfkj.androidapianalysis.proxy.TrackModel
+import com.idisfkj.androidapianalysis.proxy.statistic.annomation.TrackClick
+import com.idisfkj.androidapianalysis.proxy.statistic.annomation.TrackClickData
 import com.idisfkj.androidapianalysis.utils.ActivityUtils
 import com.idisfkj.androidapianalysis.utils.LogUtils
 import kotlinx.android.synthetic.main.main_recycler_item_layout.view.*
@@ -47,7 +50,13 @@ class MainRecyclerItemVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         }
     }
 
+    @TrackClickData
+    private val data: TrackModel = TrackModel()
+
+    @TrackClick
     private fun navigationPage(context: Context, value: MainModel) {
+        data.name = "navigationPage"
+        data.time = System.currentTimeMillis()
         val intent = Intent(context, ActivityUtils.getClassFromType(value.type))
         intent.putExtra(ActivityUtils.EXTRA_DATA, value)
         context.startActivity(intent)

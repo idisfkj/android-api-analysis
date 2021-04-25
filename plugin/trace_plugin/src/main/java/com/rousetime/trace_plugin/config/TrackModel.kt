@@ -5,12 +5,12 @@ import jdk.internal.org.objectweb.asm.Opcodes
 /**
  * Created by idisfkj on 4/15/21.
  */
-class TrackModel {
+class TrackModel private constructor() {
     companion object {
         const val OWNER = "com/idisfkj/androidapianalysis/proxy/TrackModel"
         const val DESC = "Lcom/idisfkj/androidapianalysis/proxy/TrackModel;"
 
-        fun getInstance() = TrackModel()
+        val INSTANCE = TrackModel()
     }
 
     val getName = MethodConfig(

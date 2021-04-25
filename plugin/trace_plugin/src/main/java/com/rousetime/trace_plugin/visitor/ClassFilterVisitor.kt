@@ -26,7 +26,7 @@ class ClassFilterVisitor(cv: ClassVisitor?) : ClassVisitor(Opcodes.ASM5, cv) {
     private var mTrackScanDataName: String? = null
     private var mTrackScanDataDesc: String? = null
     private var mFieldPresent = false
-    private val statisticServiceField = StatisticService.getInstance().statisticService
+    private val statisticServiceField = StatisticService.INSTANCE.statisticService
 
     override fun visit(version: Int, access: Int, name: String?, signature: String?, superName: String?, interfaces: Array<out String>?) {
         super.visit(version, access, name, signature, superName, interfaces)
@@ -43,24 +43,26 @@ class ClassFilterVisitor(cv: ClassVisitor?) : ClassVisitor(Opcodes.ASM5, cv) {
             private var mMethodAnnotationDesc: String? = null
 
             override fun visitAnnotation(desc: String?, visible: Boolean): AnnotationVisitor {
+                LocalConfig.methodVisitorConfig?.visitAnnotation?.invoke(desc, visible)
                 mMethodAnnotationDesc = desc
                 return super.visitAnnotation(desc, visible)
             }
 
             override fun onMethodExit(opcode: Int) {
                 super.onMethodExit(opcode)
+                LocalConfig.methodVisitorConfig?.onMethodExit?.invoke(opcode)
 //                LogUtils.d("onMethodExit: $mTrackDataName, $mTrackDataValue, $mTrackDataDesc")
 
                 // 默认构造方法init
-                if (name == INIT_METHOD_NAME && desc == INIT_METHOD_DESC && mFieldPresent) {
+                if (name == INIT_METHOD_NAME /** && desc == INIT_METHOD_DESC **/ && mFieldPresent) {
                     // 注入：向默认构造方法中，实例化statisticService
-                    injectStatisticService(mv, Statistic(), statisticServiceField.copy(owner = mClassName ?: ""))
+                    injectStatisticService(mv, Statistic.INSTANCE, statisticServiceField.copy(owner = mClassName ?: ""))
                 } else if (mMethodAnnotationDesc == TRACK_CLICK_DESC && !mTrackDataName.isNullOrEmpty()) {
                     // 注入：日志
                     injectLogUtils(mv, defaultLogUtilsConfig.copy(ldc = "inject track click success."))
 
                     // 注入：trackClick 点击
-                    injectTrackClick(mv, TrackModel.getInstance(), StatisticService.getInstance())
+                    injectTrackClick(mv, TrackModel.INSTANCE, StatisticService.INSTANCE)
                 } else if (mMethodAnnotationDesc == TRACK_SCAN_DESC && !mTrackScanDataName.isNullOrEmpty()) {
                     when (mTrackScanDataDesc) {
                         // 数据类型为List<*>
@@ -69,7 +71,7 @@ class ClassFilterVisitor(cv: ClassVisitor?) : ClassVisitor(Opcodes.ASM5, cv) {
                             injectLogUtils(mv, defaultLogUtilsConfig.copy(ldc = "inject track scan success."))
 
                             // 注入：List 类型的TrackScan 曝光
-                            injectListTrackScan(mv, TrackModel.getInstance(), StatisticService.getInstance())
+                            injectListTrackScan(mv, TrackModel.INSTANCE, StatisticService.INSTANCE)
                         }
                         // 数据类型为TrackModel
                         TrackModel.DESC -> {
@@ -77,7 +79,7 @@ class ClassFilterVisitor(cv: ClassVisitor?) : ClassVisitor(Opcodes.ASM5, cv) {
                             injectLogUtils(mv, defaultLogUtilsConfig.copy(ldc = "inject track scan success."))
 
                             // 注入: TrackScan 曝光
-                            injectTrackScan(mv, TrackModel.getInstance(), StatisticService.getInstance())
+                            injectTrackScan(mv, TrackModel.INSTANCE, StatisticService.INSTANCE)
                         }
                         else -> {
                         }
