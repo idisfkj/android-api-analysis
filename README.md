@@ -42,6 +42,11 @@ Android Github客户端，基于组件化开发，支持账户密码与认证登
 
 > 由于这是一个小工具，所以我将它独立于另一个[仓库](https://github.com/idisfkj/databinding_autorun)
 
+### 自动化代码注入
+Branch: `feat_transform_dev`
+
+[为了能够摸鱼，我走上了歧路](https://mp.weixin.qq.com/s?__biz=MzIzNTc5NDY4Nw==&mid=2247486137&idx=1&sn=5ede65905439fdee133eeba86e4a9f73&chksm=e8e0f329df977a3f4aef71cb0c4d3c5c772dfc707153e2298f2060e227e833542cfe55da1066&token=1480633461&lang=zh_CN#rd)
+
 ### Retrofit
 Branch: `feat_proxy_dev`
 
