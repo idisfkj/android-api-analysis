@@ -1,8 +1,9 @@
 package com.rousetime.trace_plugin.visitor
 
 import com.rousetime.trace_plugin.config.*
-import jdk.internal.org.objectweb.asm.Opcodes.*
 import org.objectweb.asm.*
+import org.objectweb.asm.Opcodes.*
+
 import org.objectweb.asm.commons.AdviceAdapter
 
 /**
