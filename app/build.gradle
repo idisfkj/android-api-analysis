@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 
-apply plugin: 'kotlin-android'
+apply plugin: "org.jetbrains.kotlin.android"
 
 apply plugin: 'kotlin-android-extensions'
 
@@ -26,6 +26,10 @@ android {
         }
     }
 
+    buildFeatures {
+        compose true
+    }
+
     dataBinding {
         enabled true
     }
@@ -33,6 +37,10 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.0.5'
     }
 
     kotlinOptions {
@@ -129,16 +137,13 @@ afterEvaluate {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    // support
-    implementation Dependencies.app_compat
-    implementation Dependencies.recyclerView
     // constraint-layout
     implementation Dependencies.constraint_layout
     // kotlin
-    implementation Dependencies.kotlin_stdlib
-    implementation Dependencies.core_ktx
+//    implementation Dependencies.kotlin_stdlib
+//    implementation Dependencies.core_ktx
     // architecture component
-    implementation Dependencies.arch_lifecycle
+    kapt Dependencies.lifecycle_compiler
     implementation Dependencies.arch_viewmodel
     implementation Dependencies.arch_livedata
     implementation Dependencies.arch_runtime
@@ -161,6 +166,16 @@ dependencies {
     // glide
     implementation Dependencies.glide_runtime
     kapt Dependencies.glide_compiler
+
+    // compose
+    implementation Dependencies.compose_runtime
+    implementation Dependencies.activity_compose
+    implementation Dependencies.material
+    implementation Dependencies.animation
+    implementation Dependencies.ui_tooling
+    implementation Dependencies.lifecycle_viewmode_compose
+    implementation Dependencies.constraint_layout_compose
+    androidTestImplementation Dependencies.ui_test
 
     testImplementation Dependencies.junit
     androidTestImplementation Dependencies.runner

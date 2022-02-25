@@ -11,9 +11,9 @@ data class MainModel(val content: String, val type: Int,
                      val title: String, val layoutId: Int) : Parcelable {
 
     constructor(parcel: Parcel) : this(
-            parcel.readString(),
+            parcel.readString() ?: "",
             parcel.readInt(),
-            parcel.readString(),
+            parcel.readString() ?: "",
             parcel.readInt())
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {

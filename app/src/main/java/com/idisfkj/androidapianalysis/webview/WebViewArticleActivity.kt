@@ -35,7 +35,7 @@ class WebViewArticleActivity : AppCompatActivity() {
         webView.settings.domStorageEnabled = true
         webView.settings.useWideViewPort = true            // 使用推荐窗口
         webView.settings.loadWithOverviewMode = true       // 设置加载模式
-        webView.loadUrl(mPath)
+        webView.loadUrl(mPath ?: "")
     }
 
     private fun getExtraData() {
