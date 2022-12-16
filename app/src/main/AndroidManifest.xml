@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" android:exported="true">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,6 +28,7 @@
         <activity android:name=".constraintlayout.ConstraintLayoutItemActivity" />
         <activity android:name=".paint.PaintActivity" />
         <activity android:name=".paint.PaintCodeAnalysisActivity" />
+        <activity android:name=".motionlayout.MotionLayoutActivity" />
     </application>
 
 </manifest>

@@ -7,7 +7,7 @@ import java.net.URI
  */
 object Versions {
     const val kotlin = "1.5.31"
-    const val constraint_layout = "2.1.3"
+    const val constraint_layout = "2.1.4"
     const val runner = "1.1.0"
     const val espresso_core = "3.1.0"
     const val junit = "4.12"
@@ -37,7 +37,7 @@ object Dependencies {
     const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val kotlin_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     const val junit = "junit:junit:${Versions.junit}"
-    const val constraint_layout = "com.android.support.constraint:constraint-layout:${Versions.constraint_layout}"
+    const val constraint_layout = "androidx.constraintlayout:constraintlayout:${Versions.constraint_layout}"
     const val runner = "com.android.support.test:runner:${Versions.runner}"
     const val espresso_core = "com.android.support.test.espresso:espresso-core:${Versions.espresso_core}"
     const val gradle_plugin = "com.android.tools.build:gradle:${Versions.gradle}"
