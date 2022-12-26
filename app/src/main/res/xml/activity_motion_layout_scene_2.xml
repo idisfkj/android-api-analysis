@@ -29,11 +29,27 @@
     </ConstraintSet>
 
     <Transition
-        app:constraintSetEnd="@id/end"
         app:constraintSetStart="@+id/start"
         app:duration="3000"
-        app:motionInterpolator="easeInOut"
-        app:pathMotionArc="startVertical">
+        app:pathMotionArc="none">
+
+        <KeyFrameSet>
+
+            <KeyAttribute
+                app:framePosition="10"
+                app:keyPositionType="parentRelative"
+                app:motionTarget="@id/tv"
+                android:scaleY="1.5"
+                android:scaleX="1.5" />
+
+            <KeyAttribute
+                app:framePosition="80"
+                app:keyPositionType="parentRelative"
+                app:motionTarget="@id/tv"
+                android:scaleY="0.5"
+                android:scaleX="0.5" />
+
+        </KeyFrameSet>
 
         <OnSwipe
             app:dragDirection="dragDown"
