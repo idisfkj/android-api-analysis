@@ -2,5 +2,15 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <option name="BUILD_PROCESS_HEAP_SIZE" value="2048" />
+    <bytecodeTargetLevel>
+      <module name="android-api-analysis.app" target="17" />
+      <module name="android-api-analysis.butterknife-annotations" target="1.7" />
+      <module name="android-api-analysis.butterknife-annotations.main" target="1.7" />
+      <module name="android-api-analysis.butterknife-annotations.test" target="1.7" />
+      <module name="android-api-analysis.butterknife-bind" target="17" />
+      <module name="android-api-analysis.butterknife-compiler" target="1.7" />
+      <module name="android-api-analysis.butterknife-compiler.main" target="1.7" />
+      <module name="android-api-analysis.butterknife-compiler.test" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

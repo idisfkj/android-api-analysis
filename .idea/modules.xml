@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2021.android-api-analysis.iml" filepath="$PROJECT_DIR$/.idea/modules/2021.android-api-analysis.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-api-analysis.iml" filepath="$PROJECT_DIR$/android-api-analysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-api-analysis.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-api-analysis.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-api-analysis.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-api-analysis.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-api-analysis.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-api-analysis.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-api-analysis.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-api-analysis.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/butterknife-annotations/android-api-analysis.butterknife-annotations.iml" filepath="$PROJECT_DIR$/.idea/modules/butterknife-annotations/android-api-analysis.butterknife-annotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/butterknife-annotations/android-api-analysis.butterknife-annotations.main.iml" filepath="$PROJECT_DIR$/.idea/modules/butterknife-annotations/android-api-analysis.butterknife-annotations.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/butterknife-annotations/android-api-analysis.butterknife-annotations.test.iml" filepath="$PROJECT_DIR$/.idea/modules/butterknife-annotations/android-api-analysis.butterknife-annotations.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/butterknife-bind/android-api-analysis.butterknife-bind.iml" filepath="$PROJECT_DIR$/.idea/modules/butterknife-bind/android-api-analysis.butterknife-bind.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/butterknife-bind/android-api-analysis.butterknife-bind.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/butterknife-bind/android-api-analysis.butterknife-bind.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/butterknife-bind/android-api-analysis.butterknife-bind.main.iml" filepath="$PROJECT_DIR$/.idea/modules/butterknife-bind/android-api-analysis.butterknife-bind.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/butterknife-bind/android-api-analysis.butterknife-bind.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/butterknife-bind/android-api-analysis.butterknife-bind.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/butterknife-compiler/android-api-analysis.butterknife-compiler.iml" filepath="$PROJECT_DIR$/.idea/modules/butterknife-compiler/android-api-analysis.butterknife-compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/butterknife-compiler/android-api-analysis.butterknife-compiler.main.iml" filepath="$PROJECT_DIR$/.idea/modules/butterknife-compiler/android-api-analysis.butterknife-compiler.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/butterknife-compiler/android-api-analysis.butterknife-compiler.test.iml" filepath="$PROJECT_DIR$/.idea/modules/butterknife-compiler/android-api-analysis.butterknife-compiler.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/butterknife-annotations/butterknife-annotations.iml" filepath="$PROJECT_DIR$/butterknife-annotations/butterknife-annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/butterknife-bind/butterknife-bind.iml" filepath="$PROJECT_DIR$/butterknife-bind/butterknife-bind.iml" />
