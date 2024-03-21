@@ -6,15 +6,15 @@ import java.net.URI
  * Email : idisfkj@gmail.com.
  */
 object Versions {
-    const val kotlin = "1.5.31"
+    const val kotlin = "1.9.20"
     const val constraint_layout = "2.1.3"
     const val runner = "1.1.0"
     const val espresso_core = "3.1.0"
     const val junit = "4.12"
-    const val gradle = "7.0.0"
+    const val gradle = "7.2.2"
     const val target_sdk = 31
     const val min_sdk = 21
-    const val build_tools = "30.0.2"
+    const val build_tools = "30.0.3"
     const val arch_version = "2.4.1"
     const val arch_room_version = "2.4.1"
     const val paging_version = "2.1.0"
@@ -24,17 +24,17 @@ object Versions {
     const val okhttp_logging_interceptor = "3.9.0"
     const val rx_android = "2.0.1"
     const val rxjava2 = "2.1.3"
-    const val work_version = "2.1.0"
+    const val work_version = "2.7.0"
     const val nav_version = "2.3.5"
     const val core_ktx = "1.7.0"
     const val activity_compose = "1.3.1"
-    const val common_compose = "1.0.5"
+    const val common_compose = "1.1.1"
     const val lifecycle_viewmodel_compose = "2.4.1"
     const val constraint_layout_compose = "1.0.0"
 }
 
 object Dependencies {
-    const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
+    const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
     const val kotlin_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     const val junit = "junit:junit:${Versions.junit}"
     const val constraint_layout = "com.android.support.constraint:constraint-layout:${Versions.constraint_layout}"

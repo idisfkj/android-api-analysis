@@ -6,9 +6,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.idisfkj.androidapianalysis.MainModel
 import com.idisfkj.androidapianalysis.R
+import com.idisfkj.androidapianalysis.databinding.ActivityConstraintLayoutBinding
 import com.idisfkj.androidapianalysis.utils.ActivityUtils
 import com.idisfkj.androidapianalysis.webview.WebViewArticleActivity
-import kotlinx.android.synthetic.main.activity_constraint_layout.*
 
 /**
  * Created by idisfkj on 2018/4/24.
@@ -16,10 +16,11 @@ import kotlinx.android.synthetic.main.activity_constraint_layout.*
  */
 class ConstraintLayoutActivity : AppCompatActivity(), View.OnClickListener {
 
+    private val mBinding by lazy { ActivityConstraintLayoutBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val extraData = getExtraData()
-        setContentView(extraData.layoutId)
+        setContentView(mBinding.root)
         title = extraData.title
         setupListener()
     }
@@ -28,15 +29,15 @@ class ConstraintLayoutActivity : AppCompatActivity(), View.OnClickListener {
             intent?.extras?.getParcelable(ActivityUtils.EXTRA_DATA) ?: throw NullPointerException("intent or extras is null")
 
     private fun setupListener() {
-        normal.setOnClickListener(this)
-        margin.setOnClickListener(this)
-        circle.setOnClickListener(this)
-        chain.setOnClickListener(this)
-        guideLine.setOnClickListener(this)
-        barrierAndGroup.setOnClickListener(this)
-        other.setOnClickListener(this)
-        relative_article.setOnClickListener {
-            WebViewArticleActivity.navigationPage(this, "ConstraintLayout使用汇总", "https://idisfkj.github.io/2018/05/03/ConstraintLayout%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/")
+        mBinding.normal.setOnClickListener(this)
+        mBinding.margin.setOnClickListener(this)
+        mBinding.circle.setOnClickListener(this)
+        mBinding.chain.setOnClickListener(this)
+        mBinding.guideLine.setOnClickListener(this)
+        mBinding.barrierAndGroup.setOnClickListener(this)
+        mBinding.other.setOnClickListener(this)
+        mBinding.relativeArticle.setOnClickListener {
+            WebViewArticleActivity.navigationPage(this, "ConstraintLayout使用汇总", "https://rousetime.com/2018/05/03/ConstraintLayout%E4%BD%BF%E7%94%A8%E6%B1%87%E6%80%BB/")
         }
     }
 

@@ -4,8 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.idisfkj.androidapianalysis.R
-import kotlinx.android.synthetic.main.activity_web_view_article_layout.*
+import com.idisfkj.androidapianalysis.databinding.ActivityWebViewArticleLayoutBinding
 
 /**
  * Created by idisfkj on 2018/4/23.
@@ -15,6 +14,7 @@ class WebViewArticleActivity : AppCompatActivity() {
 
     private var mTitle: String? = null
     private var mPath: String? = null
+    private val mBinding by lazy { ActivityWebViewArticleLayoutBinding.inflate(layoutInflater) }
 
     companion object {
         private const val EXTRA_TITLE = "extra_title"
@@ -29,13 +29,13 @@ class WebViewArticleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_web_view_article_layout)
+        setContentView(mBinding.root)
         getExtraData()
         title = mTitle
-        webView.settings.domStorageEnabled = true
-        webView.settings.useWideViewPort = true            // 使用推荐窗口
-        webView.settings.loadWithOverviewMode = true       // 设置加载模式
-        webView.loadUrl(mPath ?: "")
+        mBinding.webView.settings.domStorageEnabled = true
+        mBinding.webView.settings.useWideViewPort = true            // 使用推荐窗口
+        mBinding.webView.settings.loadWithOverviewMode = true       // 设置加载模式
+        mBinding.webView.loadUrl(mPath ?: "")
     }
 
     private fun getExtraData() {

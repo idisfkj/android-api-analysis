@@ -13,7 +13,7 @@ import java.util.concurrent.Executors
  * Created by idisfkj on 2019-07-15.
  * Email : idisfkj@gmail.com.
  */
-@Database(entities = [ArticleModel::class], version = 1)
+@Database(entities = [ArticleModel::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun articleDao(): ArticleDao

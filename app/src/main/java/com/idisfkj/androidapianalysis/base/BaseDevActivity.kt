@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProviders
-import com.idisfkj.androidapianalysis.BR
+import androidx.lifecycle.ViewModelProvider
 import com.idisfkj.androidapianalysis.MainModel
 import com.idisfkj.androidapianalysis.utils.ActivityUtils
 
@@ -23,7 +22,7 @@ abstract class BaseDevActivity<V : ViewDataBinding, M : ViewModel> : AppCompatAc
         super.onCreate(savedInstanceState)
         val extraData = getExtraData()
         viewBinding = DataBindingUtil.setContentView(this, getExtraData().layoutId)
-        vm = ViewModelProviders.of(this).get(getViewModelClass())
+        vm = ViewModelProvider(this)[getViewModelClass()]
 //        viewBinding.setVariable(BR.vm, vm)
         viewBinding.lifecycleOwner = this
         title = extraData.title

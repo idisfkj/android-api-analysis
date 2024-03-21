@@ -7,13 +7,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.idisfkj.androidapianalysis.bitmap.BitmapActivity
+import com.idisfkj.androidapianalysis.databinding.ActivityMainBinding
 import com.idisfkj.androidapianalysis.utils.ActivityUtils
 import com.idisfkj.androidapianalysis.utils.LogUtils
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mAdapter: MainRecyclerAdapter
+    private val mBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     companion object {
         const val WRITE_PERMISSION_CODE = 4369
@@ -21,15 +22,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(mBinding.root)
         setupUI()
     }
 
     private fun setupUI() {
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        mBinding.recyclerView.layoutManager = LinearLayoutManager(this)
         mAdapter = MainRecyclerAdapter()
         mAdapter.addAll(ActivityUtils.getMainModels())
-        recyclerView.adapter = mAdapter
+        mBinding.recyclerView.adapter = mAdapter
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {

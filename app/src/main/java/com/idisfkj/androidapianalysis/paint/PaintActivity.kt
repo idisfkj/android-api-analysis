@@ -6,8 +6,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.idisfkj.androidapianalysis.MainModel
 import com.idisfkj.androidapianalysis.R
+import com.idisfkj.androidapianalysis.databinding.ActivityPaintLayoutBinding
 import com.idisfkj.androidapianalysis.utils.ActivityUtils
-import kotlinx.android.synthetic.main.activity_paint_layout.*
 
 /**
  * Created by idisfkj on 2018/5/19.
@@ -15,16 +15,17 @@ import kotlinx.android.synthetic.main.activity_paint_layout.*
  */
 class PaintActivity : AppCompatActivity(), View.OnClickListener {
 
+    private val mBinding by lazy { ActivityPaintLayoutBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val extraData = getExtraData()
-        setContentView(extraData.layoutId)
+        setContentView(mBinding.root)
         title = extraData.title
         setupListener()
     }
 
     private fun setupListener() {
-        code_analysis.setOnClickListener(this)
+        mBinding.codeAnalysis.setOnClickListener(this)
     }
 
     private fun getExtraData(): MainModel = intent?.extras?.getParcelable(ActivityUtils.EXTRA_DATA) ?:

@@ -8,9 +8,9 @@ import android.content.pm.PackageManager
 import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.idisfkj.androidapianalysis.databinding.MainRecyclerItemLayoutBinding
 import com.idisfkj.androidapianalysis.utils.ActivityUtils
 import com.idisfkj.androidapianalysis.utils.LogUtils
-import kotlinx.android.synthetic.main.main_recycler_item_layout.view.*
 
 /**
  * Created by idisfkj on 2018/4/18.
@@ -18,8 +18,10 @@ import kotlinx.android.synthetic.main.main_recycler_item_layout.view.*
  */
 class MainRecyclerItemVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+    private val mBinding by lazy { MainRecyclerItemLayoutBinding.bind(itemView) }
+
     fun bindData(value: MainModel, position: Int) {
-        itemView.content.apply {
+        mBinding.content.apply {
             text = value.content
             setOnClickListener {
                 if (position == 0) {
@@ -33,13 +35,18 @@ class MainRecyclerItemVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     private fun requestPermission(context: Context, value: MainModel) {
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
+            != PackageManager.PERMISSION_GRANTED
+        ) {
 //            if (ActivityCompat.shouldShowRequestPermissionRationale(context as Activity, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
 //                LogUtils.d("shouldShowPermissionRationale")
 //                ActivityCompat.requestPermissions(context, Array(1){ Manifest.permission.WRITE_EXTERNAL_STORAGE}, MainActivity.WRITE_PERMISSION_CODE)
 //            } else {
-                LogUtils.d("request permission")
-                ActivityCompat.requestPermissions(context as Activity, Array(1){ Manifest.permission.WRITE_EXTERNAL_STORAGE}, MainActivity.WRITE_PERMISSION_CODE)
+            LogUtils.d("request permission")
+            ActivityCompat.requestPermissions(
+                context as Activity,
+                Array(1) { Manifest.permission.WRITE_EXTERNAL_STORAGE },
+                MainActivity.WRITE_PERMISSION_CODE
+            )
 //            }
         } else {
             LogUtils.d("permission was success of before")

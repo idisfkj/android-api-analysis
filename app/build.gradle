@@ -2,17 +2,16 @@ apply plugin: 'com.android.application'
 
 apply plugin: "org.jetbrains.kotlin.android"
 
-apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android {
-    compileSdkVersion Versions.target_sdk
-    buildToolsVersion Versions.build_tools
     defaultConfig {
         applicationId "com.idisfkj.androidapianalysis"
+        compileSdk Versions.target_sdk
         minSdkVersion Versions.min_sdk
         targetSdkVersion Versions.target_sdk
         versionCode 1
@@ -23,11 +22,14 @@ android {
         config {
             storeFile file('key.store')
             keyAlias 'android'
+            keyPassword 'android123'
+            storePassword 'android123'
         }
     }
 
     buildFeatures {
         compose true
+        viewBinding true
     }
 
     dataBinding {
@@ -40,7 +42,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion '1.0.5'
+        kotlinCompilerExtensionVersion '1.5.5'
     }
 
     kotlinOptions {
@@ -124,16 +126,16 @@ android {
 //    }
 }
 
-afterEvaluate {
-    def propsFile = rootProject.file('keystore.properties')
-    def configName = 'config'
-    if (propsFile.exists() && android.signingConfigs.hasProperty(configName)) {
-        def props = new Properties()
-        props.load(new FileInputStream(propsFile))
-        android.signingConfigs[configName].keyPassword = props['keyPassword']
-        android.signingConfigs[configName].storePassword = props['storePassword']
-    }
-}
+//afterEvaluate {
+//    def propsFile = rootProject.file('keystore.properties')
+//    def configName = 'config'
+//    if (propsFile.exists() && android.signingConfigs.hasProperty(configName)) {
+//        def props = new Properties()
+//        props.load(new FileInputStream(propsFile))
+//        android.signingConfigs[configName].keyPassword = props['keyPassword']
+//        android.signingConfigs[configName].storePassword = props['storePassword']
+//    }
+//}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
